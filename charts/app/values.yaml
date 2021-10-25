@@ -7,10 +7,9 @@ replicaCount: 1
 
 image:
   # -- Full image address
-  repository: nginx
+  url: nginx:latest
   pullPolicy: IfNotPresent
   # -- Image tag to be used
-  tag: ""
 
 imagePullSecrets:
   # -- Secret to pull image

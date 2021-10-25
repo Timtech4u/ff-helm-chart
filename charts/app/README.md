@@ -14,8 +14,7 @@ A basic helm chart for deploying application on Fireflies
 | autoscaling.minReplicas | int | `1` | Auto scaling minimum number of pod |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Metrics to be used for deciding whether the pod should be upscaled or not. |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"nginx"` | Full image address |
-| image.tag | string | `""` | Image tag to be used |
+| image.url | string | `"nginx:latest"` | Full image address |
 | imagePullSecrets[0] | object | `{"name":"regsec"}` | Secret to pull image |
 | ingress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt-prod"` |  |
 | ingress.annotations."kubernetes.io/ingress.class" | string | `"nginx"` |  |
