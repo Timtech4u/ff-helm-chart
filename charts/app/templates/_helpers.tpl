@@ -5,7 +5,7 @@ Expand the name of the chart.
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{- define app.annotations -}}
+{{- define "app.annotations" -}}
 argocd.argoproj.io/compare-options: IgnoreExtraneous
 {{- end }}
 
