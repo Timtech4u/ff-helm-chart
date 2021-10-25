@@ -17,6 +17,7 @@ spec:
     metadata:
       {{- with .Values.podAnnotations }}
       annotations:
+        {{- include "app.annotations" . | nindent 8 }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
