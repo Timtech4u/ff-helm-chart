@@ -47,7 +47,7 @@ Selector labels
 */}}
 {{- define "microservice-ff.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "microservice-ff.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/instance: {{ .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
 {{- end }}
 
 {{/*
