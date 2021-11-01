@@ -108,3 +108,4 @@ secrets: {}
 # values:
 # - key: key-on-secret-manager
 #   name: secret-data-name
+terminationGracePeriodSeconds : 30
