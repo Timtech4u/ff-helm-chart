@@ -1,0 +1,37 @@
+cluster: operator
+image:
+  url: ghcr.io/firefliesai/logger-ff/logger-ff
+ports:
+  - name: http
+    number: 3000
+resources:
+  limits:
+    cpu: 1
+    memory: 2Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+extraEnv:
+  - name: DEFAULT_DATABASE_URI
+    valueFrom:
+      secretKeyRef:
+        name: firefliessecret
+        key: parseDb
+  - name: NODE_ENV
+    valueFrom:
+      fieldRef:
+        fieldPath: metadata.namespace
+terminationGracePeriodSeconds: 80
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: logger-ff.fireflies.dev
+      paths:
+        - path: /
+          pathType: Prefix
+          port: 8292
+  tls:
+    - hosts:
+      - logger-ff.fireflies.dev
+      secretName: logger-tls-secret
