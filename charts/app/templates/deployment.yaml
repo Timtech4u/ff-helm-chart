@@ -44,14 +44,22 @@ spec:
               containerPort: {{ .number }}
               protocol: TCP
             {{- end }}
+          {{- with .Values.probes.liveness }}
+          {{- if .enabled }}
           livenessProbe:
             httpGet:
-              path: /
-              port: http
+              path: {{ .path }}
+              port: {{ .port }}
+          {{- end }}
+          {{- end }}
+          {{- with .Values.probes.readiness }}
+          {{- if .enabled }}
           readinessProbe:
             httpGet:
-              path: /
-              port: http
+              path: {{ .path }}
+              port: {{ .port }}
+          {{- end }}
+          {{- end }}
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}

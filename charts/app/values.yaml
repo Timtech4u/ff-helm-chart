@@ -108,4 +108,22 @@ secrets: {}
 # values:
 # - key: key-on-secret-manager
 #   name: secret-data-name
+
+# -- Configure how long the termination period (t)
 terminationGracePeriodSeconds : 30
+
+probes:
+  liveness:
+    # -- Enable liveness probes
+    enabled: false
+    # -- livenes probes target path
+    path: /
+    # -- liveness probes target port
+    port: 80
+  readiness:
+    # -- Enable readiness probes
+    enabled: false
+    # -- readiness probes target path
+    path: /
+    # -- readiness probes target port
+    port: 80

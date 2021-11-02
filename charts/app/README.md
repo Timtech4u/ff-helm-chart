@@ -17,7 +17,6 @@ A basic helm chart for deploying application on Fireflies
 | image.url | string | `"nginx:latest"` | Full image address |
 | imagePullSecrets[0] | object | `{"name":"regsec"}` | Secret to pull image |
 | ingress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt-prod"` |  |
-| ingress.annotations."kubernetes.io/ingress.class" | string | `"nginx"` |  |
 | ingress.className | string | `""` |  |
 | ingress.enabled | bool | `false` | Enable ingress creation |
 | ingress.hosts[0] | object | `{"host":"chart-example.local","paths":[{"path":"/","pathType":"ImplementationSpecific","port":80}]}` | Public endpoint to access the service |
@@ -28,6 +27,12 @@ A basic helm chart for deploying application on Fireflies
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | ports | list | `[]` | list of ports to be exposed |
+| probes.liveness.enabled | bool | `false` | Enable liveness probes |
+| probes.liveness.path | string | `"/"` | livenes probes target path |
+| probes.liveness.port | int | `80` | liveness probes target port |
+| probes.readiness.enabled | bool | `false` | Enable readiness probes |
+| probes.readiness.path | string | `"/"` | readiness probes target path |
+| probes.readiness.port | int | `80` | readiness probes target port |
 | replicaCount | int | `1` | The desired number of pod |
 | resources.limits.cpu | string | `"200m"` | Configure CPU limits for the pod. |
 | resources.limits.memory | string | `"256Mi"` | Configure Memory limit for the pod. This is the hard limit resources, so whenever your application uses more than the limit, it could throw OOM error. |
@@ -39,6 +44,7 @@ A basic helm chart for deploying application on Fireflies
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `false` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
+| terminationGracePeriodSeconds | int | `30` | Configure how long the termination period (t) |
 | tolerations | list | `[]` |  |
 
 ----------------------------------------------
