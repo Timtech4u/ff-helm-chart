@@ -9,7 +9,10 @@ image:
   # -- Full image address
   url: nginx:latest
   pullPolicy: IfNotPresent
-  # -- Image tag to be used
+  # -- command to be used
+  command: []
+  # -- args to be used with command
+  args: []
 
 imagePullSecrets:
   # -- Secret to pull image

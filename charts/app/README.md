@@ -13,6 +13,8 @@ A basic helm chart for deploying application on Fireflies
 | autoscaling.maxReplicas | int | `5` | Auto scaling maximum number of pod |
 | autoscaling.minReplicas | int | `1` | Auto scaling minimum number of pod |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Metrics to be used for deciding whether the pod should be upscaled or not. |
+| image.args | list | `[]` | args to be used with command |
+| image.command | list | `[]` | command to be used |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.url | string | `"nginx:latest"` | Full image address |
 | imagePullSecrets[0] | object | `{"name":"regsec"}` | Secret to pull image |
