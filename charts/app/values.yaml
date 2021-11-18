@@ -130,3 +130,8 @@ probes:
     path: /
     # -- readiness probes target port
     port: 80
+
+backendConfig:
+  # -- Enable Backend Config
+  enabled: false
+  port: 3000
