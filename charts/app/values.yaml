@@ -5,6 +5,9 @@
 # -- The desired number of pod
 replicaCount: 1
 
+labels: {}
+# my-company: my-value
+
 image:
   # -- Full image address
   url: nginx:latest
