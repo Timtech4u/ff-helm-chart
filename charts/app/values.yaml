@@ -122,19 +122,36 @@ probes:
   liveness:
     # -- Enable liveness probes
     enabled: false
+    # -- Liveness probe method to be used. Only 3 valid options: http, tcp and command
+    mode: http
     # -- livenes probes target path
     path: /
     # -- liveness probes target port
     port: 80
+    # -- liveness probes command (for command mode)
+    command: []
+    # -- Number of seconds after the container has started before liveness or readiness probes are initiated.
+    initialDelaySeconds: 0
+    # -- How often (in seconds) to perform the probe.
+    periodSeconds: 10
   readiness:
     # -- Enable readiness probes
     enabled: false
-    # -- readiness probes target path
+    # -- Readiness probe method to be used. Only 3 valid options: http, tcp and command
+    mode: http
+    # -- Readiness probes target path
     path: /
-    # -- readiness probes target port
+    # -- Readiness probes target port
     port: 80
+    # -- Readiness probes command (for command mode)
+    command: []
+    # -- Number of seconds after the container has started before probes are initiated.
+    initialDelaySeconds: 0
+    # -- How often (in seconds) to perform the probe.
+    periodSeconds: 10
 
 backendConfig:
   # -- Enable Backend Config
   enabled: false
+  # -- Port to be used on Backend Config
   port: 3000

@@ -54,18 +54,44 @@ spec:
             {{- end }}
           {{- with .Values.probes.liveness }}
           {{- if .enabled }}
+          {{- if eq .mode "http" }}
           livenessProbe:
             httpGet:
               path: {{ .path }}
               port: {{ .port }}
+          {{- else if eq .mode "tcp" }}
+          livenessProbe:
+            tcpSocket:
+              port: {{ .port }}
+          {{- else if eq .mode "command" }}
+          livenessProbe:
+            exec:
+              command:
+                {{ toYaml .command | nindent 16 }}
+          {{- end }}
+            initialDelaySeconds: {{ .initialDelaySeconds }}
+            periodSeconds: {{ .periodSeconds }}
           {{- end }}
           {{- end }}
           {{- with .Values.probes.readiness }}
           {{- if .enabled }}
+          {{- if eq .mode "http" }}
           readinessProbe:
             httpGet:
               path: {{ .path }}
               port: {{ .port }}
+          {{- else if eq .mode "tcp" }}
+          readinessProbe:
+            tcpSocket:
+              port: {{ .port }}
+          {{- else if eq .mode "command" }}
+          readinessProbe:
+            exec:
+              command:
+                {{ toYaml .command | nindent 16 }}
+          {{- end }}
+            initialDelaySeconds: {{ .initialDelaySeconds }}
+            periodSeconds: {{ .periodSeconds }}
           {{- end }}
           {{- end }}
           {{- with .Values.volumeMounts }}
