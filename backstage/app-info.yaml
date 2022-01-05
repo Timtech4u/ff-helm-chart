@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: helm-charts
+  description: Simple Fireflies apps
+spec:
+  targets:
+    - ./helm-charts-app-info.yaml

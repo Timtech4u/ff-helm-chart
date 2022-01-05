@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    github.com/project-slug: firefliesai/helm-charts
+    backstage.io/techdocs-ref: dir:.
+  name: helm-charts
+  description: Simple Fireflies apps
+  # tags:
+  #   - backstage
+  #   - docs
+spec:
+  type: service
+  lifecycle: production
+  owner: firebenders
+  system: platform
