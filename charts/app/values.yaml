@@ -155,3 +155,7 @@ backendConfig:
   enabled: false
   # -- Port to be used on Backend Config
   port: 3000
+
+# This new params would disable our changes by default.
+disableSuffix: true
+
