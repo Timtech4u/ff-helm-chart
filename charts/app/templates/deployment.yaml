@@ -46,6 +46,13 @@ spec:
           {{- end }}
           env:
             {{- toYaml .Values.extraEnv | nindent 12 }}
+            {{- range .Values.extraSecrets }}
+            - name: {{ .name }}
+              valueFrom:
+                secretKeyRef:
+                  key: {{ .key }}
+                  name: {{ include "app.secretName" $ }}
+            {{- end }}
           ports:
             {{- range .Values.ports }}
             - name: {{ .name }}

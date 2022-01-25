@@ -15,6 +15,8 @@ A basic helm chart for deploying application on Fireflies
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Metrics to be used for deciding whether the pod should be upscaled or not. |
 | backendConfig.enabled | bool | `false` | Enable Backend Config |
 | backendConfig.port | int | `3000` | Port to be used on Backend Config |
+| disableSuffix | bool | `true` | This new params would disable our changes by default. |
+| extraSecrets | list | `[]` | Pull sensitive data from Secret Manager into environment variable ``` - key: the secret key on Secret Manager   name: name of environment variables ``` |
 | image.args | list | `[]` | args to be used with command |
 | image.command | list | `[]` | command to be used |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
@@ -51,7 +53,7 @@ A basic helm chart for deploying application on Fireflies
 | resources.limits.memory | string | `"256Mi"` | Configure Memory limit for the pod. This is the hard limit resources, so whenever your application uses more than the limit, it could throw OOM error. |
 | resources.requests.cpu | string | `"100m"` | Configure CPU request for the pod. |
 | resources.requests.memory | string | `"128Mi"` | Configure Memory request for the pod. |
-| secrets | object | `{}` | External secret to be pulled and used for the deployment |
+| secrets | object | `{}` | External secret to be pulled and used for the deployment. Use this for non standard secret. For standard environment variables, please check `extraSecret` variable ``` name: secret-name backend: gcpSecretsManager projectId: fireflies-ai values: - key: key-on-secret-manager   name: secret-data-name ``` |
 | securityContext | object | `{}` |  |
 | service.type | string | `"ClusterIP"` | Kubernetes Service type to be created. Use this default value to expose the service via ingress-nginx |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |

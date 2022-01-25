@@ -106,14 +106,17 @@ tolerations: []
 
 affinity: {}
 
-# -- External secret to be pulled and used for the deployment
-secrets: {}
+# -- External secret to be pulled and used for the deployment. Use this for non standard secret.
+# For standard environment variables, please check `extraSecret` variable
+# ```
 # name: secret-name
 # backend: gcpSecretsManager
 # projectId: fireflies-ai
 # values:
 # - key: key-on-secret-manager
 #   name: secret-data-name
+# ```
+secrets: {}
 
 # -- Configure how long the termination period (t)
 terminationGracePeriodSeconds : 30
@@ -156,6 +159,12 @@ backendConfig:
   # -- Port to be used on Backend Config
   port: 3000
 
-# This new params would disable our changes by default.
+# -- This new params would disable our changes by default.
 disableSuffix: true
 
+# -- Pull sensitive data from Secret Manager into environment variable
+# ```
+# - key: the secret key on Secret Manager
+#   name: name of environment variables
+# ```
+extraSecrets: []
