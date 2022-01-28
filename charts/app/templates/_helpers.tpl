@@ -65,7 +65,11 @@ Selector labels
 */}}
 {{- define "app.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "app.name" . }}
+{{- if .Values.overrideArgoID -}}
+app.kubernetes.io/instance: {{ .Values.overrideArgoID }}
+{{- else -}}
 app.kubernetes.io/instance: {{ .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
+{{- end -}}
 {{- end }}
 
 {{/*
