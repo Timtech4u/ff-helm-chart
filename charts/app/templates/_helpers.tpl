@@ -44,7 +44,11 @@ Common labels
 */}}
 {{- define "app.labels" -}}
 helm.sh/chart: {{ include "app.chart" . }}
+{{- if .Values.overrideArgoID -}}
+fireflies.ai/app: {{ .Values.overrideArgoID }}
+{{- else -}}
 fireflies.ai/app: {{ .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
+{{- end -}}
 {{ include "app.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
