@@ -91,3 +91,7 @@ Create the name of the service account to use
 {{- define "app.secretKeyName" -}}
 {{ printf "env-%s-%s" .Release.Namespace (include "app.fullname" .) | trunc 63 | trimSuffix "-" }}
 {{- end }}
+
+{{- define "app.secretProject" -}}
+{{- default "fireflies-ai" .Values.secretProject }}
+{{- end }}
