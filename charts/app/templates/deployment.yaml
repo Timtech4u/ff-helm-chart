@@ -45,7 +45,6 @@ spec:
             {{- toYaml .Values.image.args | nindent 12 }}
           {{- end }}
           env:
-            {{- toYaml .Values.extraEnv | nindent 12 }}
             {{- range .Values.extraSecrets }}
             - name: {{ .name }}
               valueFrom:
@@ -53,6 +52,7 @@ spec:
                   key: {{ .key }}
                   name: {{ include "app.secretName" $ }}
             {{- end }}
+            {{- toYaml .Values.extraEnv | nindent 12 }}
           ports:
             {{- range .Values.ports }}
             - name: {{ .name }}
