@@ -46,7 +46,7 @@ Common labels
 helm.sh/chart: {{ include "app.chart" . }}
 {{- if .Values.overrideArgoID }}
 fireflies.ai/app: {{ .Values.overrideArgoID }}
-{{- else }}
+{{- else if .Values.cluster }}
 fireflies.ai/app: {{ .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
 {{- end }}
 {{ include "app.selectorLabels" . }}
