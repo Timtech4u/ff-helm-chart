@@ -68,8 +68,10 @@ app.kubernetes.io/name: {{ include "app.name" . }}
 {{- if .Values.overrideArgoID }}
 app.kubernetes.io/instance: {{ .Values.overrideArgoID }}
 app.kubernetes.io/instance-name: {{ .Values.overrideArgoID }}-{{ .Release.Name }}
-{{- else }}
+{{- else if .Values.cluster }}
 app.kubernetes.io/instance: {{ .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
+{{- else }}
+app.kubernetes.io/instance: {{ .Release.Namespace }}-{{ .Release.Name }}
 {{- end }}
 {{- end }}
 
