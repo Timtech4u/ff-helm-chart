@@ -25,6 +25,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
     nginx.ingress.kubernetes.io/permanent-redirect: {{ .targetProtocol }}//{{ .targetURL }}
     nginx.ingress.kubernetes.io/permanent-redirect-code: "308"
+    nginx.ingress.kubernetes.io/app-root: {{ .targetPath }}
     nginx.ingress.kubernetes.io/rewrite-target: {{ .targetPath }}
     {{- with $.Values.ingress.annotations }}
       {{- toYaml . | nindent 4 }}
