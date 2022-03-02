@@ -46,7 +46,7 @@ Common labels
 helm.sh/chart: {{ include "app.chart" . }}
 {{- if .Values.overrideArgoID }}
 fireflies.ai/app: {{ .Values.overrideArgoID }}
-{{- else }}
+{{- else if .Values.cluster }}
 fireflies.ai/app: {{ .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
 {{- end }}
 {{ include "app.selectorLabels" . }}
@@ -68,8 +68,10 @@ app.kubernetes.io/name: {{ include "app.name" . }}
 {{- if .Values.overrideArgoID }}
 app.kubernetes.io/instance: {{ .Values.overrideArgoID }}
 app.kubernetes.io/instance-name: {{ .Values.overrideArgoID }}-{{ .Release.Name }}
-{{- else }}
+{{- else if .Values.cluster }}
 app.kubernetes.io/instance: {{ .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
+{{- else }}
+app.kubernetes.io/instance: {{ .Release.Namespace }}-{{ .Release.Name }}
 {{- end }}
 {{- end }}
 
