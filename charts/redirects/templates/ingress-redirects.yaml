@@ -21,6 +21,7 @@ metadata:
   labels:
     {{- include "redirects.labels" $ | nindent 4 }}
   annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/service-upstream: "true"
     nginx.ingress.kubernetes.io/permanent-redirect: {{ .targetProtocol }}//{{ .targetURL }}
     nginx.ingress.kubernetes.io/permanent-redirect-code: "308"
@@ -43,4 +44,8 @@ spec:
                 name: {{ $fullName }}
                 port:
                   number: {{ $svcPort }}
+  tls:
+    - hosts:
+      - {{ .sourceURL }}
+      secretName: {{ .sourceURL | replace "." "-" }}-tls
 {{- end -}}
