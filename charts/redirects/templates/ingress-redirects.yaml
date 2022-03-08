@@ -24,6 +24,8 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # nginx.ingress.kubernetes.io/service-upstream: "true"
     nginx.ingress.kubernetes.io/permanent-redirect: {{ .targetProtocol }}//{{ .targetURL }}{{ default "" .targetPath }}
+    nginx.ingress.kubernetes.io/proxy-redirect-from: https://{{ .sourceURL }}
+    nginx.ingress.kubernetes.io/proxy-redirect-to: {{ .targetProtocol }}//{{ .targetURL }}{{ default "" .targetPath }}
     # # nginx.ingress.kubernetes.io/backend-protocol: {{ .targetProtocol | upper }}
     # # nginx.ingress.kubernetes.io/permanent-redirect-code: "308"
     # # nginx.ingress.kubernetes.io/app-root: {{ .targetPath }}
