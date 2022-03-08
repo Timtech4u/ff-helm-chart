@@ -66,6 +66,7 @@ tolerations: []
 affinity: {}
 
 redirects: []
+# redirects:
 # - sourceURL: firefliesapp.com
 #   sourcePath: /(.*)
 #   targetURL: guide.fireflies.ai
