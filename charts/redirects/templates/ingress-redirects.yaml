@@ -22,12 +22,14 @@ metadata:
     {{- include "redirects.labels" $ | nindent 4 }}
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    nginx.ingress.kubernetes.io/service-upstream: "true"
-    nginx.ingress.kubernetes.io/permanent-redirect: {{ .targetProtocol }}//{{ .targetURL }}
-    # nginx.ingress.kubernetes.io/backend-protocol: {{ .targetProtocol | upper }}
-    # nginx.ingress.kubernetes.io/permanent-redirect-code: "308"
-    # nginx.ingress.kubernetes.io/app-root: {{ .targetPath }}
-    nginx.ingress.kubernetes.io/rewrite-target: {{ .targetPath }}
+    # nginx.ingress.kubernetes.io/service-upstream: "true"
+    # nginx.ingress.kubernetes.io/permanent-redirect: {{ .targetProtocol }}//{{ .targetURL }}
+    # # nginx.ingress.kubernetes.io/backend-protocol: {{ .targetProtocol | upper }}
+    # # nginx.ingress.kubernetes.io/permanent-redirect-code: "308"
+    # # nginx.ingress.kubernetes.io/app-root: {{ .targetPath }}
+    # nginx.ingress.kubernetes.io/rewrite-target: {{ .targetPath }}
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      return 308 {{ .targetProtocol }}//{{ .targetURL }}{{ default "" .targetPath }}
     {{- with $.Values.ingress.annotations }}
       {{- toYaml . | nindent 4 }}
     {{- end }}
