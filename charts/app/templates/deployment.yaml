@@ -17,9 +17,10 @@ spec:
       {{- include "app.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
+        {{- include "linkerd.config" $ | nindent 8 }}
         {{- include "app.annotations" . | nindent 8 }}
+      {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
