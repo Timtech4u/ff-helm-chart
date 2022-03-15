@@ -9,7 +9,7 @@ Expand the name of the chart.
 {{- range $key, $val := .Values.annotations -}}
 {{ $key }}: {{ $val | quote }}
 {{ end -}}
-{{- end }}
+{{- end -}}
 
 {{- define "app.annotations" -}}
 argocd.argoproj.io/compare-options: IgnoreExtraneous
