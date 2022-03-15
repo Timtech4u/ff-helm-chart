@@ -5,6 +5,12 @@ Expand the name of the chart.
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
+{{- define "deployment.annotations" -}}
+{{- range $key, $val := .Values.annotations -}}
+{{ $key }}: {{ $val | quote }}
+{{ end -}}
+{{- end }}
+
 {{- define "app.annotations" -}}
 argocd.argoproj.io/compare-options: IgnoreExtraneous
 argocd.argoproj.io/sync-options: Prune=false

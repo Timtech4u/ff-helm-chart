@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   annotations:
     {{- include "app.annotations" . | nindent 4 }}
+    {{- include "deployment.annotations" . | nindent 4 }}
+    {{- include "linkerd.config" . | nindent 4 }}
   name: {{ include "app.fullname" . }}
   labels:
     {{- include "app.labels" . | nindent 4 }}
