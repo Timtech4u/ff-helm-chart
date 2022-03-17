@@ -65,10 +65,5 @@ tolerations: []
 
 affinity: {}
 
+# -- List of redirects. Read more here https://www.notion.so/fireflies/Proxy-Configuration-993c235f244d4e69b8727b95d2a3c83b
 redirects: []
-# redirects:
-# - sourceURL: firefliesapp.com
-#   sourcePath: /(.*)
-#   targetURL: guide.fireflies.ai
-#   targetPath: /$1
-#   targetProtocol: https
