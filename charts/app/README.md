@@ -55,6 +55,7 @@ A basic helm chart for deploying application on Fireflies
 | resources.requests.memory | string | `"128Mi"` | Configure Memory request for the pod. |
 | secrets | object | `{}` | External secret to be pulled and used for the deployment. Use this for non standard secret. For standard environment variables, please check `extraSecret` variable ``` name: secret-name backend: gcpSecretsManager projectId: fireflies-ai values: - key: key-on-secret-manager   name: secret-data-name ``` |
 | securityContext | object | `{}` |  |
+| service.exported | bool | `false` | Multicluster exposed service. Set this to `true` to expose this service to the multicluster communication link |
 | service.type | string | `"ClusterIP"` | Kubernetes Service type to be created. Use this default value to expose the service via ingress-nginx |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `false` | Specifies whether a service account should be created |

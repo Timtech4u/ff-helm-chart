@@ -51,6 +51,8 @@ securityContext: {}
 service:
   # -- Kubernetes Service type to be created. Use this default value to expose the service via ingress-nginx
   type: ClusterIP
+  # -- Multicluster exposed service. Set this to `true` to expose this service to the multicluster communication link
+  exported: false
 
 ingress:
   # -- Enable ingress creation
