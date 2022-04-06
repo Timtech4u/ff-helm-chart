@@ -1,4 +1,5 @@
 {{- if .Values.autoscaling.enabled }}
+# The v2 hasn't supported yet on ArgoCD. So we stick with v2beta2
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
