@@ -60,6 +60,7 @@ ingress:
   className: ""
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/service-upstream: "true"
     # kubernetes.io/tls-acme: "true"
   hosts:
     # -- Public endpoint to access the service
