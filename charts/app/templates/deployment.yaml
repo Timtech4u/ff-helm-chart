@@ -25,7 +25,6 @@ spec:
           {{- toYaml . | nindent 8 }}
         {{- end }}
       labels:
-        fireflies.ai/app: {{ include "app.firefliesLabels" . }}
         {{- include "app.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
@@ -116,19 +115,8 @@ spec:
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: fireflies.ai/app
-                  operator: In
-                  values:
-                  - {{ include "app.firefliesLabels" . }}
-              topologyKey: kubernetes.io/hostname
       {{- with .Values.affinity }}
+      affinity:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.tolerations }}

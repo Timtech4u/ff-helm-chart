@@ -50,7 +50,11 @@ Common labels
 */}}
 {{- define "app.labels" -}}
 helm.sh/chart: {{ include "app.chart" . }}
-fireflies.ai/app: {{ include "app.firefliesLabels" . }}
+{{- if .Values.overrideArgoID }}
+fireflies.ai/app: {{ .Values.overrideArgoID }}
+{{- else if .Values.cluster }}
+fireflies.ai/app: {{ .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
+{{- end }}
 {{ include "app.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
@@ -60,16 +64,6 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{ toYaml .Values.labels }}
 {{- end }}
 {{- end }}
-
-{{- define "app.firefliesLabels" -}}
-{{- if .Values.overrideArgoID -}}
-{{- .Values.overrideArgoID -}}
-{{- else if .Values.cluster -}}
-{{- .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
-{{- else -}}
-{{- .Release.Namespace }}-{{ .Release.Name }}
-{{- end }}
-{{- end -}}
 
 
 {{/*
