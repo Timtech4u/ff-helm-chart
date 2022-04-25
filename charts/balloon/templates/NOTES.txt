@@ -1,0 +1,1 @@
+{{ .Values.replicaCount }} Balloon pods has been deployed

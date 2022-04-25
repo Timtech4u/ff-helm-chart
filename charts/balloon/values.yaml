@@ -1,0 +1,51 @@
+# Default values for balloon.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- Number of Balloon pod to be deployed. This number will determine how many compute spares that we will hold
+replicaCount: 1
+
+# -- PriorityClass of the pod. It will determine the priority of the pod to be evicted. The default value here is the lowest value that GKE will consider to scale up but low enough to be evicted once our workload need.
+priority: -10
+
+image:
+  # -- Image to be used for balloon pod. This default image is the "default" do nothing pod.
+  repository: us.gcr.io/google-containers/pause
+  # -- What to do to pull image.
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  # -- The default pause image version
+  tag: "3.2"
+
+# -- imagePullSecrets if we want to pull the image from our registry
+imagePullSecrets: []
+# -- Override deployment name. Shouldn't be used unless you know what you want to achieve.
+nameOverride: ""
+# -- Override Full deployment name. Shouldn't be used unless you know what you want to achieve.
+fullnameOverride: ""
+
+# -- Pod Annotations. The default value is to skip linkerd injection.
+podAnnotations:
+  linkerd.io/inject: disabled
+
+
+resources:
+  limits:
+    # -- How many cpu limit that this balloon pod will use.
+    cpu: 500m
+    # -- How many memory limit that this balloon pod will use.
+    memory: 512Mi
+  requests:
+    # -- How many cpu request that this balloon pod will use.
+    cpu: 250m
+    # -- How many memory request that this balloon pod will use.
+    memory: 128Mi
+
+# -- Node Selector to pick which nodes to be used for deploying balloon pod. In other word, which node that we will use for hold spare computes
+nodeSelector: {}
+
+# -- Balloon pod schedule tolerations to enable the pod scheduled into some protected nodes (such as master).
+tolerations: []
+
+# -- The way we schedule Balloon pod. By default it will spread the pod into each node, via antiaffinity
+affinity: {}
