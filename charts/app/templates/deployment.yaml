@@ -26,6 +26,7 @@ spec:
         {{- end }}
       labels:
         fireflies.ai/app: {{ include "app.firefliesLabels" . }}
+        fireflies.ai/chart: {{ include "app.name" . }}
         {{- include "app.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
