@@ -1,11 +1,11 @@
 apiVersion: apps/v1
-kind: DaemonSet
+kind: Deployment
 metadata:
   name: {{ include "balloon.fullname" . }}
   labels:
     {{- include "balloon.labels" . | nindent 4 }}
 spec:
-  # replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       {{- include "balloon.selectorLabels" . | nindent 6 }}
@@ -32,6 +32,24 @@ spec:
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
+      affinity:
+      {{- if not .Values.affinity }}
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: fireflies.ai/app
+                  operator: In
+                  values:
+                  - {{ include "balloon.fullname" . }}
+              topologyKey: kubernetes.io/hostname
+            weight: 100
+      {{- else -}}
+        {{- with .Values.affinity }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:
