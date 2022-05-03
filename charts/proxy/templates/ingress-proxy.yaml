@@ -1,0 +1,53 @@
+{{- $fullName := include "proxy.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+{{- $apiVer := "extensions/v1beta1" -}}
+{{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion -}}
+{{- $apiVer = "networking.k8s.io/v1" -}}
+{{- else if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+{{- $apiVer = "networking.k8s.io/v1beta1" -}}
+{{- end -}}
+
+{{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) -}}
+{{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") -}}
+{{- $_ := set .Values.ingress.annotations "kubernetes.io/ingress.class" .Values.ingress.className -}}
+{{- end -}}
+{{- end -}}
+
+{{- range .Values.proxy -}}
+---
+apiVersion: {{ print $apiVer }}
+kind: Ingress
+metadata:
+  name: proxy-{{ .sourceURL | replace "." "-" }}
+  labels:
+    {{- include "proxy.labels" $ | nindent 4 }}
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: {{ .targetPath }}
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/upstream-vhost: {{ .targetURL }}
+    {{- with $.Values.ingress.annotations }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  {{- if and $.Values.ingress.className (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
+  ingressClassName: {{ $.Values.ingress.className }}
+  {{- end }}
+  rules:
+    - host: {{ .sourceURL }}
+      http:
+        paths:
+          - path: {{ .sourcePath }}
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: external-{{ .targetURL | replace "." "-" }}
+                port:
+                  number: 443
+  tls:
+    - hosts:
+      - {{ .sourceURL }}
+      secretName: {{ .sourceURL | replace "." "-" }}-tls
+{{ end -}}

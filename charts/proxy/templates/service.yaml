@@ -1,0 +1,21 @@
+{{- range .Values.proxy }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-{{ .targetURL | replace "." "-" }}
+  labels:
+    {{- include "proxy.labels" $ | nindent 4 }}
+spec:
+  type: ExternalName
+  externalName: {{ .targetURL }}
+  ports:
+    - port: 443
+      targetPort: 443
+      protocol: TCP
+      name: https
+  selector:
+    {{- include "proxy.selectorLabels" $ | nindent 4 }}
+{{- end }}
+
+

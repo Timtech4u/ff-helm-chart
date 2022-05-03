@@ -1,0 +1,18 @@
+{{- range .Values.proxy }}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "proxy-{{ .sourceURL }}"
+  labels:
+    {{- include "proxy.labels" $ | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['proxy-{{ .sourceURL }}:443']
+  restartPolicy: Never
+{{ end -}}
