@@ -6,4 +6,5 @@ linkerd.io/inject: {{ $val | quote }}
 config.linkerd.io/{{ $key }}: {{ $val | quote }}
 {{ end -}}
 {{- end -}}
+config.alpha.linkerd.io/proxy-wait-before-exit-seconds: {{ .Values.terminationGracePeriodSeconds | quote }}
 {{- end -}}
