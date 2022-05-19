@@ -103,7 +103,7 @@ Create the name of the service account to use
 {{- end }}
 
 {{- define "app.secretKeyName" -}}
-{{ printf "env-%s-%s" .Release.Namespace (include "app.fullname" .) | trunc 63 | trimSuffix "-" }}
+{{ printf "env-%s-%s" (default .Release.Namespace .Values.overrideSecretNamespace) (include "app.fullname" .) | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{- define "app.secretProject" -}}

@@ -171,3 +171,6 @@ disableSuffix: true
 #   name: name of environment variables
 # ```
 extraSecrets: []
+
+# -- Override secret key namespace
+overrideSecretNamespace:
