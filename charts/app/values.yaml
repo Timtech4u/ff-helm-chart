@@ -172,5 +172,5 @@ disableSuffix: true
 # ```
 extraSecrets: []
 
-# -- Override secret key namespace
-overrideSecretNamespace:
+# -- Override secret key from Google Secret Manager
+overrideSecretKey:

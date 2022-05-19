@@ -32,7 +32,7 @@ A basic helm chart for deploying application on Fireflies
 | ingress.tls | list | `[]` |  |
 | labels | object | `{}` |  |
 | nodeSelector | object | `{}` |  |
-| overrideSecretNamespace | string | `nil` | Override secret key namespace |
+| overrideSecretKey | string | `nil` | Override secret key from Google Secret Manager |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | ports | list | `[]` | list of ports to be exposed |
