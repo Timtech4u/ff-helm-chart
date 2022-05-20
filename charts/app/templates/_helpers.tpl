@@ -12,8 +12,7 @@ Expand the name of the chart.
 {{- end -}}
 
 {{- define "app.annotations" -}}
-argocd.argoproj.io/compare-options: IgnoreExtraneous
-argocd.argoproj.io/sync-options: Prune=false
+argocd.argoproj.io/sync-options: Prune=true
 {{- end }}
 
 {{/*
