@@ -26,54 +26,54 @@ appVersion: "1.16.0"
 # Consolidate all the deployment via helm dependency
 dependencies:
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: audio
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: autojoin-worker
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: bot-fireflies
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: calendar
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: calendar-watch
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: call-join
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: dashboard
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: join-queue
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: mailin-server
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: participant-dispatch
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: queue
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: user-service
 - name: app
-  repository: file://../../helm-charts/charts/app
+  repository: file://../app
   version: 0.0.1
   alias: user-service-data-migration
