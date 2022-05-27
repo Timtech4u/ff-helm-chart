@@ -2,7 +2,7 @@ package fireflies
 
 "call-join": {
 	fullnameOverride: "call-join"
-	secretProject:    "ff-private-cloud"
+	secretProject:    _#config.googleProjectId
 	replicaCount:     1
 	image: url: "ghcr.io/firefliesai/call-join-ff/call-join-ff"
 	ports: [{
@@ -47,7 +47,7 @@ package fireflies
 		value: "deprecated-queue"
 	}, {
 		name:  "PUPPET_V2_GOOGLE_PROJECT_ID"
-		value: "ff-private-cloud"
+		value: _#config.googleProjectId
 	}, {
 		name:  "PUPPET_V2_PUB_SUB_TOPIC"
 		value: "puppet-queue"
@@ -115,7 +115,7 @@ package fireflies
 		value: "call-join-queue-sub"
 	}, {
 		name:  "googleProjectId"
-		value: "ff-private-cloud"
+		value: _#config.googleProjectId
 	}, {
 		name:  "MEDIASTORAGE_BASEURL"
 		value: "media-storage.fireflies.dev"
@@ -139,25 +139,25 @@ package fireflies
 	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "MONGO_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {
 		name: "PARSE_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "PARSE_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {

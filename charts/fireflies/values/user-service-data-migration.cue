@@ -24,13 +24,13 @@ package fireflies
 	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "MONGO_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {

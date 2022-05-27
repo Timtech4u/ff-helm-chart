@@ -2,7 +2,7 @@ package fireflies
 
 "autojoin-worker": {
 	fullnameOverride: "autojoin-worker"
-	secretProject:    "ff-private-cloud"
+	secretProject:    _#config.googleProjectId
 	replicaCount:     1
 	image: url: "ghcr.io/firefliesai/autojoin-worker-ff/autojoin-worker-ff"
 	ports: [{
@@ -29,7 +29,7 @@ package fireflies
 	}]
 	extraEnv: [{
 		name:  "googleProjectId"
-		value: "ff-private-cloud"
+		value: _#config.googleProjectId
 	}, {
 		name:  "GOOGLE_APPLICATION_CREDENTIALS"
 		value: "/var/secrets/google/key.json"
@@ -57,7 +57,7 @@ package fireflies
 		value: "AUTO_JOIN_WORKER_QUEUE"
 	}, {
 		name:  "GCLOUD_PROJECT"
-		value: "ff-private-cloud"
+		value: _#config.googleProjectId
 	}, {
 		name:  "TZ"
 		value: "TZ"
@@ -94,25 +94,25 @@ package fireflies
 	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "MONGO_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {
 		name: "PARSE_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "PARSE_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {

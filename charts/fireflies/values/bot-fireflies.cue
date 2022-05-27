@@ -3,7 +3,7 @@ package fireflies
 "bot-fireflies": {
 	fullnameOverride: "bot-fireflies"
 	annotations: "reloader.stakater.com/auto": "true"
-	secretProject: "ff-private-cloud"
+	secretProject: _#config.googleProjectId
 	replicaCount:  1
 	image: url: "ghcr.io/firefliesai/bot-fireflies/bot-fireflies"
 	ports: [{
@@ -30,7 +30,7 @@ package fireflies
 	}]
 	extraEnv: [{
 		name:  "googleProjectId"
-		value: "ff-private-cloud"
+		value: _#config.googleProjectId
 	}, {
 		name:  "mailinServerDevTopic"
 		value: "mailin-server-queue"
@@ -95,7 +95,7 @@ package fireflies
 		value: "https://use-notes-staging-kc2j5-205-es.qbox2.com:31877"
 	}, {
 		name:  "GCLOUD_PROJECT"
-		value: "ff-private-cloud"
+		value: _#config.googleProjectId
 	}, {
 		name:  "LOCAL_PORT"
 		value: "8001"
@@ -188,25 +188,25 @@ package fireflies
 		// to be replaced with internal endpoint
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "MONGO_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {
 		name: "PARSE_DB_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "PARSE_DB_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {

@@ -2,7 +2,7 @@ package fireflies
 
 "mailin-server": {
 	fullnameOverride: "mailin-server"
-	secretProject:    "ff-private-cloud"
+	secretProject:    _#config.googleProjectId
 	replicaCount:     1
 	image: url: "ghcr.io/firefliesai/mailin-server/mailin-server"
 	ports: [{

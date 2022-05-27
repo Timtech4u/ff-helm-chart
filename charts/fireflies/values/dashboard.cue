@@ -3,7 +3,7 @@ package fireflies
 dashboard: {
 	image: url: "ghcr.io/firefliesai/use-notes/use-notes"
 	fullnameOverride: "dashboard"
-	secretProject:    "ff-private-cloud"
+	secretProject:    _#config.googleProjectId
 	replicaCount:     1
 	ports: [{
 		name:   "http"
@@ -79,25 +79,25 @@ dashboard: {
 	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "MONGO_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {
 		name: "PARSE_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "PARSE_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {

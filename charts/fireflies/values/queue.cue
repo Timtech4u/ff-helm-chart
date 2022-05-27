@@ -2,7 +2,7 @@ package fireflies
 
 queue: {
 	fullnameOverride: "queue"
-	secretProject:    "ff-private-cloud"
+	secretProject:    _#config.googleProjectId
 	replicaCount:     1
 	image: url: "ghcr.io/firefliesai/queue-ff/queue-ff"
 	ports: [{
@@ -29,7 +29,7 @@ queue: {
 	}]
 	extraEnv: [{
 		name:  "googleProjectId"
-		value: "ff-private-cloud"
+		value: _#config.googleProjectId
 	}, {
 		name:  "GOOGLE_APPLICATION_CREDENTIALS"
 		value: "/var/secrets/google/key.json"
@@ -56,25 +56,25 @@ queue: {
 		//   value: STAGING_SCHEDULER_JOB_QUEUE
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "MONGO_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {
 		name: "PARSE_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "PARSE_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {

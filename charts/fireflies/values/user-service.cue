@@ -2,7 +2,7 @@ package fireflies
 
 "user-service": {
 	fullnameOverride: "user-service"
-	secretProject:    "ff-private-cloud"
+	secretProject:    _#config.googleProjectId
 	service: {
 		exported: true
 		type:     "ClusterIP"
@@ -71,13 +71,13 @@ package fireflies
 	extraEnv: [{
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "MONGO_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {

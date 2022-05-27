@@ -2,7 +2,7 @@ package fireflies
 
 "join-queue": {
 	fullnameOverride: "join-queue"
-	secretProject:    "ff-private-cloud"
+	secretProject:    _#config.googleProjectId
 	replicaCount:     1
 	image: url: "ghcr.io/firefliesai/join-queue-ff/join-queue-ff"
 	ports: [{
@@ -30,7 +30,7 @@ package fireflies
 	secrets: {
 		name:      "ff-k8s-config"
 		backend:   "gcpSecretsManager"
-		projectId: "ff-private-cloud"
+		projectId: _#config.googleProjectId
 		data: [{
 			key:  "ff-k8s-config"
 			name: "k8s-config"
@@ -38,7 +38,7 @@ package fireflies
 	}
 	extraEnv: [{
 		name:  "googleProjectId"
-		value: "ff-private-cloud"
+		value: _#config.googleProjectId
 	}, {
 		name:  "K8S_POD_SUB"
 		value: "k8s-join-queue-sub"
@@ -70,25 +70,25 @@ package fireflies
 	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "MONGO_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-fireflies"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {
 		name: "PARSE_USERNAME"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "username"
 		}
 	}, {
 		name: "PARSE_PASSWORD"
 		valueFrom: secretKeyRef: {
-			name: "parse-admin-parse-user"
+			name: _#config.secretName
 			key:  "password"
 		}
 	}, {
