@@ -3,7 +3,7 @@ package fireflies
 bridge: {
 	fullnameOverride: "bridge"
 	secretProject:    _#config.googleProjectId
-	repaCount:        1
+	replicaCount:        1
 	image: url: "ghcr.io/firefliesai/bridge-ff/bridge-ff"
 	ports: [{
 		name:   "http"
