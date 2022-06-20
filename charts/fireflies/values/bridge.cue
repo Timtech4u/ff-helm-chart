@@ -82,5 +82,4 @@ bridge: {
 	terminationGracePeriodSeconds: 80
 	backendConfig: enabled: true
 	linkerd: inject: "enabled"
-	nodeSelector: "fireflies.ai/app": "fireflies"
 }

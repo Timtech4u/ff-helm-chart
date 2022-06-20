@@ -162,5 +162,4 @@ apollo: {
 			periodSeconds:       10
 		}
 	}
-	nodeSelector: "fireflies.ai/app": "fireflies"
 }
