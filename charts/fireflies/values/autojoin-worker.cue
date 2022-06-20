@@ -132,6 +132,9 @@ package fireflies
 		value: "user-service.production.svc.cluster.local:50051"
 	}]
 	extraSecrets: [{
+		name: "SENTRY_DSN_URL"
+		key: "SENTRY_DSN_URL"
+	}, {
 		name: "GQL_ACCESS_TOKEN"
 		key:  "GQL_ACCESS_TOKEN"
 	}, {
