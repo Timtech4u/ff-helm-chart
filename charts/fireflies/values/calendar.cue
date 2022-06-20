@@ -63,6 +63,9 @@ calendar: {
 	}, {
 		name: "GCLOUD_PROJECT"
 		value: _#config.googleProjectId
+	}, {
+		name: "REDIS_URL"
+		value: "redis://redis-master.private.svc.cluster.local:6379"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
