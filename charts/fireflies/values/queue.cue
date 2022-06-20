@@ -89,14 +89,14 @@ queue: {
 	}, {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "PUPPET_REDIS_URL"
-		key:  "PUPPET_REDIS_URL"
+		value: "redis://redis-master.private.svc.cluster.local:6379"
 	}, {
 		name: "REDIS_URL"
-		key:  "REDIS_URL"
-	}, {
+		value: "redis://redis-master.private.svc.cluster.local:6379"
+	}]
+	extraSecrets: [{
 		name: "K8S_PUPPET_DISPATCH_STRING"
 		key:  "K8S_PUPPET_DISPATCH_STRING"
 	}]

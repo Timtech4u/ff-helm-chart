@@ -254,6 +254,12 @@ package fireflies
 	}, {
 		name:  "USER_RPC_ENABLE_INSECURE"
 		value: "enabled"
+	}, {
+		name: "REDIS_URL"
+		value: "redis://redis-master.private.svc.cluster.local:6379"
+	}, {
+		name: "PUPPET_REDIS_URL"
+		value: "redis://redis-master.private.svc.cluster.local:6379"
 	}]
 	extraSecrets: [{
 		name: "GMAIL_STMP_PASS"
@@ -364,14 +370,8 @@ package fireflies
 		name: "PROD_SLACK_CLIENT_SECRET"
 		key:  "PROD_SLACK_CLIENT_SECRET"
 	}, {
-		name: "PUPPET_REDIS_URL"
-		key:  "PUPPET_REDIS_URL"
-	}, {
 		name: "RABBIT_MQ_URL"
 		key:  "RABBIT_MQ_URL"
-	}, {
-		name: "REDIS_URL"
-		key:  "REDIS_URL"
 	}, {
 		name: "SEGMENT_WRITE_KEY"
 		key:  "SEGMENT_WRITE_KEY"

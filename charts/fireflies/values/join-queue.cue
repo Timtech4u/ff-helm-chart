@@ -124,17 +124,15 @@ package fireflies
 			  \"name\": \"main\"
 			}]
 			"""
-	}]
-
-	extraSecrets: [{
-		// - name: K8S_PUPPET_DISPATCH_STRING
-		//   key: K8S_PUPPET_DISPATCH_STRING
+	}, {
 		name: "PUPPET_REDIS_URL"
-		key:  "PUPPET_REDIS_URL"
+		value: "redis://redis-master.private.svc.cluster.local:6379"
 	}, {
 		name: "REDIS_URL"
-		key:  "REDIS_URL"
+		value: "redis://redis-master.private.svc.cluster.local:6379"
 	}]
+
+	extraSecrets: []
 	labels: {
 		app:        "join-queue-ff"
 		owner:      "call-funnelers"

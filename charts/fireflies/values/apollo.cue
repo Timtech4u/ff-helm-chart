@@ -64,9 +64,6 @@ apollo: {
 		name: "TZ"
 		key:  "TZ"
 	}, {
-		name: "REDIS_URL"
-		key:  "REDIS_URL"
-	}, {
 		name: "CALL_JOIN_URL"
 		key:  "CALL_JOIN_URL"
 	}, {
@@ -86,6 +83,9 @@ apollo: {
 		key:  "DEEPGRAM_PASSWORD"
 	} ]
 	extraEnv: [{
+		name: "REDIS_URL"
+		value: "redis://redis-master.private.svc.cluster.local:6379"
+	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
 			name: _#config.secretName

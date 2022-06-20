@@ -136,6 +136,9 @@ package fireflies
 	}, {
 		name: "CONCURRENT_MESSAGES"
 		value: "10"
+	}, {
+		name: "REDIS_URL"
+		value: "redis://redis-master.private.svc.cluster.local:6379"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
@@ -173,9 +176,6 @@ package fireflies
 	}, {
 		name: "SEGMENT_WRITE_KEY"
 		key:  "SEGMENT_WRITE_KEY"
-	}, {
-		name: "REDIS_URL"
-		key:  "REDIS_URL"
 	}, {
 		name: "QUEUE_PREFIX"
 		key:  "QUEUE_PREFIX"

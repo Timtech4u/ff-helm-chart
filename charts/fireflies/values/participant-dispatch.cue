@@ -109,6 +109,9 @@ package fireflies
 	}, {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
+	}, {
+		name: "REDIS_URL"
+		value: "redis://redis-master.private.svc.cluster.local:6379"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
@@ -125,9 +128,6 @@ package fireflies
 	}, {
 		name: "NOW_TOKEN"
 		key:  "NOW_TOKEN"
-	}, {
-		name: "REDIS_URL"
-		key:  "REDIS_URL"
 	}, {
 		name: "AWS_ACCESS_KEY_ID"
 		key:  "AWS_ACCESS_KEY_ID"
