@@ -139,6 +139,9 @@ package fireflies
 	}, {
 		name: "REDIS_URL"
 		value: "redis://redis-master.private.svc.cluster.local:6379"
+	}, {
+		name: "AUTOJOIN_JOB_MAX_SECONDS"
+		value: "30"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
