@@ -37,6 +37,12 @@ package fireflies
 		}]
 	}
 	extraEnv: [{
+		name: "K8S_TARGET_NAMESPACE"
+		value: "private"
+	}, {
+		name: "K8S_USE_IN_CLUSTER_ACCESS"
+		value: "true"
+	}, {
 		name:  "googleProjectId"
 		value: _#config.googleProjectId
 	}, {
