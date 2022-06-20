@@ -66,6 +66,9 @@ calendar: {
 	}, {
 		name: "REDIS_URL"
 		value: "redis://redis-master.private.svc.cluster.local:6379"
+	}, {
+		name: "GENERALSCHEDULER_TOPIC"
+		value: "message-queue"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
