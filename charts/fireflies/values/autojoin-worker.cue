@@ -127,6 +127,9 @@ package fireflies
 	}, {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
+	}, {
+		name:  "USER_RPC_SERVER_ADDRESS"
+		value: "user-service.production.svc.cluster.local:50051"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
