@@ -95,7 +95,7 @@ download: {
 		enabled:   true
 		className: "nginx"
 		hosts: [{
-			host: "download.fireflies.dev"
+			host: "download.private.fireflies.dev"
 			paths: [{
 				path:     "/"
 				pathType: "ImplementationSpecific"
@@ -104,9 +104,9 @@ download: {
 		}]
 		tls: [{
 			hosts: [
-				"download.fireflies.dev",
+				"download.private.fireflies.dev",
 			]
-			secretName: "download-tls-secret"
+			secretName: "download-private-tls-secret"
 		}]
 	}
 	resources: {
