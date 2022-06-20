@@ -133,6 +133,9 @@ package fireflies
 	}, {
 		name: "SENTRY_DSN_URL"
 		value: "https://cb8f7bb624784da4bd72ede8d5f0fbf4@o207331.ingest.sentry.io/1548795"
+	}, {
+		name: "CONCURRENT_MESSAGES"
+		value: "10"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
