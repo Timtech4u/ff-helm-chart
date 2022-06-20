@@ -28,6 +28,10 @@ dependencies:
 - name: app
   repository: file://../app
   version: 0.0.1
+  alias: apollo
+- name: app
+  repository: file://../app
+  version: 0.0.1
   alias: audio
 - name: app
   repository: file://../app
