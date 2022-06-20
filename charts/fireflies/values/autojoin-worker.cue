@@ -130,11 +130,11 @@ package fireflies
 	}, {
 		name:  "USER_RPC_SERVER_ADDRESS"
 		value: "user-service.production.svc.cluster.local:50051"
+	}, {
+		name: "SENTRY_DSN_URL"
+		value: "https://cb8f7bb624784da4bd72ede8d5f0fbf4@o207331.ingest.sentry.io/1548795"
 	}]
 	extraSecrets: [{
-		name: "SENTRY_DSN_URL"
-		key: "SENTRY_DSN_URL"
-	}, {
 		name: "GQL_ACCESS_TOKEN"
 		key:  "GQL_ACCESS_TOKEN"
 	}, {
