@@ -138,7 +138,7 @@ package fireflies
 		value: "10"
 	}, {
 		name: "REDIS_URL"
-		value: "redis://redis-master.private.svc.cluster.local:6379"
+		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
 		name: "AUTOJOIN_JOB_MAX_SECONDS"
 		value: "30"

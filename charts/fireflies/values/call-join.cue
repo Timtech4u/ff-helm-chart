@@ -177,10 +177,10 @@ package fireflies
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}, {
 		name: "REDIS_URL"
-		value: "redis://redis-master.private.svc.cluster.local:6379"
+		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
 		name: "PUPPET_REDIS_URL"
-		value: "redis://redis-master.private.svc.cluster.local:6379"
+		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}]
 	extraSecrets: [{
 		name: "K8S_PUPPET_DISPATCH_STRING"

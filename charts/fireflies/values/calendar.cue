@@ -65,7 +65,7 @@ calendar: {
 		value: _#config.googleProjectId
 	}, {
 		name: "REDIS_URL"
-		value: "redis://redis-master.private.svc.cluster.local:6379"
+		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
 		name: "GENERALSCHEDULER_TOPIC"
 		value: "message-queue"
