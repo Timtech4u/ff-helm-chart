@@ -60,6 +60,9 @@ calendar: {
 	}, {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
+	}, {
+		name: "GCLOUD_PROJECT"
+		value: _#config.googleProjectId
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
