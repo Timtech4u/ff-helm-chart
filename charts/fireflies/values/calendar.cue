@@ -62,6 +62,9 @@ calendar: {
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}]
 	extraSecrets: [{
+		name: "GQL_ACCESS_TOKEN"
+		key: "GQL_ACCESS_TOKEN"
+	}, {
 		name: "SEGMENT_WRITE_KEY"
 		key:  "SEGMENT_WRITE_KEY"
 	}, {
