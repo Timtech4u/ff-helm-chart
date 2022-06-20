@@ -12,6 +12,18 @@ download: {
 		name:  "DEBUG"
 		value: "true"
 	}, {
+		name: "USE_NOTES_MONGO_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "password"
+		}
+	}, {
+		name: "USE_NOTES_MONGO_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "username"
+		}
+	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
 			name: _#config.secretName
@@ -36,6 +48,12 @@ download: {
 			key:  "password"
 		}
 	}, {
+		name:  "PARSE_DB_URL"
+		value: "mongodb+srv://$(MONGO_USERNAME):$(MONGO_PASSWORD)@parse-svc.private.svc.cluster.local/use-notes-0?ssl=false&authSource=admin&tls=false&replicaSet=parse"
+	}, {
+		name:  "USE_NOTES_MONGO_URI"
+		value: "mongodb+srv://$(MONGO_USERNAME):$(MONGO_PASSWORD)@parse-svc.private.svc.cluster.local/use-notes-0?ssl=false&authSource=admin&tls=false&replicaSet=parse"
+	}, {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(MONGO_USERNAME):$(MONGO_PASSWORD)@parse-svc.private.svc.cluster.local/use-notes-0?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}, {
@@ -56,14 +74,14 @@ download: {
 	}, {
 		name:  "FIREFLIES_ORIGIN"
 		value: "https://app.fireflies.dev"
-	}]
-	extraSecrets: [{
-		name: "AWS_BUCKET_ID"
-		key:  "AWS_BUCKET_ID"
 	}, {
 		name: "AWS_BUCKET_REGION"
-		key:  "AWS_BUCKET_REGION"
+		value: "auto"
 	}, {
+		name: "AWS_BUCKET_ID"
+		value: "ff-private-download"
+	}]
+	extraSecrets: [{
 		name: "AWS_SECRET"
 		key:  "AWS_SECRET"
 	}, {
@@ -72,21 +90,6 @@ download: {
 	}, {
 		name: "SENTRY_DSN_URL"
 		key:  "SENTRY_DSN_URL"
-	}, {
-		name: "USE_NOTES_MONGO_USERNAME"
-		key:  "USE_NOTES_MONGO_USERNAME"
-	}, {
-		name: "USE_NOTES_MONGO_PASSWORD"
-		key:  "USE_NOTES_MONGO_PASSWORD"
-	}, {
-		name: "USE_NOTES_MONGO_URI"
-		key:  "USE_NOTES_MONGO_URI"
-	}, {
-		name: "PARSE_DB_URL"
-		key:  "mongo-database-uri"
-	}, {
-		name: "OTEL_EXPORTER_OTLP_HEADERS"
-		key:  "OTEL_EXPORTER_OTLP_HEADERS"
 	}]
 	ingress: {
 		enabled:   true

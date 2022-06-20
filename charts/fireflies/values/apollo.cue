@@ -86,33 +86,33 @@ apollo: {
 		key:  "DEEPGRAM_PASSWORD"
 	} ]
 	extraEnv: [{
-               name: "MONGO_USERNAME"
-               valueFrom: secretKeyRef: {
-                    name: _#config.secretName
-                    key:  "username"
-        }
-        }, {
-               name: "MONGO_PASSWORD"
-               valueFrom: secretKeyRef: {
-                    name: _#config.secretName
-                    key:  "password"
-        }
-        }, {
-               name: "PARSE_USERNAME"
-               valueFrom: secretKeyRef: {
-                    name: _#config.secretName
-                    key:  "username"
-        }
-        }, {
-                name: "PARSE_PASSWORD"
-                valueFrom: secretKeyRef: {
-                     name: _#config.secretName
-                     key:  "password"
-        }
-        }, {
+		name: "MONGO_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "username"
+		}
+	}, {
+		name: "MONGO_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "password"
+		}
+	}, {
+		name: "PARSE_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "username"
+		}
+	}, {
+		name: "PARSE_PASSWORD"
+		valueFrom: secretKeyRef: {
+				name: _#config.secretName
+				key:  "password"
+		}
+	}, {
 		name:  "USE_NOTES_MONGO_URL"
 		value: "mongodb+srv://$(MONGO_USERNAME):$(MONGO_PASSWORD)@parse-svc.private.svc.cluster.local/use-notes-0?ssl=false&authSource=admin&tls=false&replicaSet=parse"
-        }, {
+	}, {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}, {
@@ -130,7 +130,7 @@ apollo: {
 		enabled:   true
 		className: "nginx"
 		hosts: [{
-			host: "apollo-private.fireflies.dev"
+			host: "apollo.private.fireflies.dev"
 			paths: [{
 				path:     "/"
 				pathType: "Prefix"
@@ -139,7 +139,7 @@ apollo: {
 		}]
 		tls: [{
 			hosts: [
-				"apollo-private.fireflies.dev",
+				"apollo.private.fireflies.dev",
 			]
 			secretName: "apollo-private-fireflies-dev-tls"
 		}]
