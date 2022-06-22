@@ -12,6 +12,10 @@ This helm charts is the Fireflies Helm Chart to deploy your own Fireflies deploy
 - ElasticSearch
 - S3 Bucket
 
+# Crossplane
+
+Crossplane is used for setting up Google Dependencies, including Service Account and PubSub Topics and Subscriptions.
+
 # List of Services
 
 - [ ] analytics-ff
