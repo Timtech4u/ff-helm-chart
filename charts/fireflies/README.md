@@ -16,16 +16,16 @@ This helm charts is the Fireflies Helm Chart to deploy your own Fireflies deploy
 
 - [ ] analytics-ff
 - [x] audio
-- [ ] apollo
+- [x] apollo
 - [x] autojoin-worker
 - [x] bot-fireflies
-- [ ] bridge-ff
+- [x] bridge-ff
 - [ ] bull-monitor-ff
 - [x] calendar-ff
 - [x] calendar-watch
 - [x] call-join-ff
 - [ ] commands-ff
-- [ ] download-ff
+- [x] download-ff
 - [ ] integration-ff
 - [x] join-queue-ff
 - [ ] landing-ff
