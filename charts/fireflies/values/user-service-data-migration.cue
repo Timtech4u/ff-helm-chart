@@ -45,7 +45,7 @@ package fireflies
 		liveness: {
 			enabled:             true
 			mode:                "http"
-			path:                "/health"
+			path:                "/liveness"
 			port:                8080
 			initialDelaySeconds: 30
 			periodSeconds:       30
@@ -53,7 +53,7 @@ package fireflies
 		readiness: {
 			enabled:             true
 			mode:                "http"
-			path:                "/health"
+			path:                "/"
 			port:                8080
 			initialDelaySeconds: 30
 			periodSeconds:       30
