@@ -139,6 +139,9 @@ dashboard: {
 	}, {
 		name:  "USER_SERVICE_GRPC_ENABLE_INSECURE"
 		value: "enabled"
+	}, {
+		name: "SERVICE_NAME"
+		value: "dashboard"
 	}]
 	extraSecrets: [{
 		name: "ADMIN_MEETING_NOTE_EDIT"
