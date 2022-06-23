@@ -19,9 +19,6 @@ package fireflies
 		}
 	}
 	extraEnv: [{
-		name:  "NODE_ENV"
-		value: "production"
-	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
 			name: _#config.secretName
