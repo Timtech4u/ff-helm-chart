@@ -41,7 +41,7 @@ package fireflies
 		value: "mongodb+srv://$(MONGO_USERNAME):$(MONGO_PASSWORD)@parse-svc.private.svc.cluster.local/use-notes-0?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}, {
 		name:  "USER_SERVICE_DB"
-		value: "mongodb+srv://$(MONGO_USERNAME):$(MONGO_PASSWORD)@parse-svc.private.svc.cluster.local/user-service-db?ssl=false&authSource=admin&tls=false&retryWrites=true&w=majority&readPreference=primaryPreferred&appname=user-service"
+		value: "mongodb+srv://$(MONGO_USERNAME):$(MONGO_PASSWORD)@parse-svc.private.svc.cluster.local/user-service-db?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}]
 	probes: {
 		// to revisit when we add grpc endpoints for readiness
