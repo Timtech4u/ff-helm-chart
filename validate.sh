@@ -10,6 +10,6 @@ do
         continue;
     else
         echo "Evaluating $FILENAME"
-        cue vet -p argo $yaml argocd/*.cue
+        cue vet -p argo ./argocd $yaml
     fi
 done
