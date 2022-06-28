@@ -127,7 +127,7 @@ package fireflies
 		value: "fireflies-updated-tokens"
 	}, {
 		name:  "GOOGLE_PROJECT_ID"
-		value: "ff-private-cloud"
+		value: "_#config.googleProjectId"
 	}, {
 		name:  "ROOT_URL"
 		value: "https://user-service.private.fireflies.dev/"

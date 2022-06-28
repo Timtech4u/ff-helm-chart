@@ -142,6 +142,12 @@ dashboard: {
 	}, {
 		name: "SERVICE_NAME"
 		value: "dashboard"
+	}, {
+		name: "IS_DEV"
+		value: "true"
+	}, {
+		name: "APOLLO_GRAPH_REF"
+		value: "ff-federated-graph@staging"
 	}]
 	extraSecrets: [{
 		name: "ADMIN_MEETING_NOTE_EDIT"
@@ -209,6 +215,9 @@ dashboard: {
 	}, {
 		name: "GOOGLE_SECRET"
 		key:  "GOOGLE_SECRET"
+	}, {
+		name: "APOLLO_KEY"
+		key: "APOLLO_KEY"
 	}]
 	ingress: {
 		enabled:   true

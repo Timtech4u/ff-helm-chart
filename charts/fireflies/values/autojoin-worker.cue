@@ -142,6 +142,9 @@ package fireflies
 	}, {
 		name: "AUTOJOIN_JOB_MAX_SECONDS"
 		value: "30"
+	}, {
+		name: "USER_RPC_CLIENT_SERVICE_NAME"
+		value: "autojoin-worker-ff"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
