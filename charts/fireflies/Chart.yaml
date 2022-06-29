@@ -44,6 +44,10 @@ dependencies:
 - name: app
   repository: file://../app
   version: 0.0.1
+  alias: bridge
+- name: app
+  repository: file://../app
+  version: 0.0.1
   alias: calendar
 - name: app
   repository: file://../app
