@@ -13,20 +13,20 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 	image: {
 		url: string
 		pullPolicy: apiV1.#enumPullPolicy | *"IfNotPresent"
-		command?: [string, ...]
-		args?: [string, ...]
+		command?: [...string]
+		args?: [...string]
 	}
 
-	imagePullSecrets: [apiV1.#LocalObjectReference, ...] | *[
+	imagePullSecrets: [...apiV1.#LocalObjectReference] | *[
 		{
 			name: "regsec"
 		}
 	]
 
-	ports?: [{
+	ports?: [...{
 		name: string
 		"number": int
-	}, ...]
+	}]
 
 	serviceAccount: {
 		create: bool | *false
@@ -52,17 +52,17 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 			"cert-manager.io/cluster-issuer": "letsencrypt-prod"
 			"nginx.ingress.kubernetes.io/service-upstream": "true"
 		}
-		hosts: [{
+		hosts: [...{
 			host: string | *"chart-example.local"
-			paths: [{
+			paths: [...{
 				// -- Path to be exposed
 				path:     string | *"/"
 				pathType: networkV1.#enumPathType | *"ImplementationSpecific"
 				// -- Target exposed port
 				port: int | *80
-			}, ...]
-		}, ...]
-		tls: [networkV1.#IngressTLS, ...] | *[]
+			}]
+		}]
+		tls?: [...networkV1.#IngressTLS]
 	}
 
 	resources: {
@@ -84,9 +84,9 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 		targetMemoryUtilizationPercentage?: int
 	}
 
-	nodeSelector: [string]: string | *{}
+	nodeSelector?: [string]: string
 
-	tolerations: [apiV1.#Toleration, ...] | *[]
+	tolerations?: [...apiV1.#Toleration]
 
 	affinity: apiV1.#Affinity | *{}
 
@@ -94,10 +94,10 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 		name: string
 		backend: string
 		projectId: string
-		data: [{
+		data: [...{
 			key: string
 			name: string
-		}, ...]
+		}]
 	} | *{}
 
 	terminationGracePeriodSeconds: int | *30
@@ -120,7 +120,7 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 			}
 			if mode == "command" {
 				// -- liveness probes command (for command mode)
-				command?: [string, ...]
+				command?: [...string]
 			}
 			// -- Number of seconds after the container has started before liveness or readiness probes are initiated.
 			initialDelaySeconds: int | *0
@@ -144,7 +144,7 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 			}
 			if mode == "command" {
 				// -- Readiness probes command (for command mode)
-				command: [string, ...]
+				command: [...string]
 			}
 			// -- Number of seconds after the container has started before probes are initiated.
 			initialDelaySeconds: int | *0
@@ -168,20 +168,20 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 	// - key: the secret key on Secret Manager
 	//   name: name of environment variables
 	// ```
-	extraSecrets: [{
+	extraSecrets?: [...{
 		key: string
 		name: string
-	}, ...] | *[]
+	}]
 
 	// -- Override secret key from Google Secret Manager
 	overrideSecretKey?: null
 
-	extraEnv: [apiV1.#EnvVar, ...] | *[]
+	extraEnv?: [...apiV1.#EnvVar]
 
 	secretProject?: string
 
-	volumeMounts?: [apiV1.#VolumeMount, ...]
-	volumes?: [apiV1.#Volume, ...]
+	volumeMounts?: [...apiV1.#VolumeMount]
+	volumes?: [...apiV1.#Volume]
 
 	linkerd?: [string]: string
 }
