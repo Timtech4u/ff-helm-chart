@@ -90,7 +90,7 @@ package fireflies
 		value: "autojoin-worker-ff-events"
 	}, {
 		name:  "USER_SERVICE_GRPC_URL"
-		value: "user-service.production.svc.cluster.local:50051"
+		value: "user-service.private.svc.cluster.local:50051"
 	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
@@ -129,7 +129,7 @@ package fireflies
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}, {
 		name:  "USER_RPC_SERVER_ADDRESS"
-		value: "user-service.production.svc.cluster.local:50051"
+		value: "user-service.private.svc.cluster.local:50051"
 	}, {
 		name: "SENTRY_DSN_URL"
 		value: "https://cb8f7bb624784da4bd72ede8d5f0fbf4@o207331.ingest.sentry.io/1548795"

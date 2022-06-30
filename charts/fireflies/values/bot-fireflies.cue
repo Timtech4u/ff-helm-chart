@@ -250,7 +250,7 @@ package fireflies
 		value: "bot-ff"
 	}, {
 		name:  "USER_RPC_SERVER_ADDRESS"
-		value: "user-service.production.svc.cluster.local:50051"
+		value: "user-service.private.svc.cluster.local:50051"
 	}, {
 		name:  "USER_RPC_ENABLE_INSECURE"
 		value: "enabled"

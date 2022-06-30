@@ -45,14 +45,14 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 		exported: bool | *false
 	}
 
-	ingress: {
-		enabled:   bool | *false
-		className: string | *""
-		annotations: [string]: string | *{
+	ingress?: {
+		enabled?:   bool
+		className?: string
+		annotations?: [string]: string | *{
 			"cert-manager.io/cluster-issuer": "letsencrypt-prod"
 			"nginx.ingress.kubernetes.io/service-upstream": "true"
 		}
-		hosts: [...{
+		hosts?: [...{
 			host: string | *"chart-example.local"
 			paths: [...{
 				// -- Path to be exposed

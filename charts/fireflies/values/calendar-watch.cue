@@ -48,7 +48,7 @@ package fireflies
 		value: "autojoin-queue"
 	}, {
 		name:  "USER_SERVICE_GRPC_URL"
-		value: "user-service.production.svc.cluster.local:50051"
+		value: "user-service.private.svc.cluster.local:50051"
 	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
