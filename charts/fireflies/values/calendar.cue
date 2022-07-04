@@ -23,7 +23,7 @@ calendar: {
 		value: "use-notes-0"
 	}, {
 		name:  "GQL_URL"
-		value: "http://dashboard.private.svc.cluster.local:3000"
+		value: "http://bot-fireflies.private.svc.cluster.local:8001/graphql"
 	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
@@ -61,18 +61,18 @@ calendar: {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}, {
-		name: "GCLOUD_PROJECT"
+		name:  "GCLOUD_PROJECT"
 		value: _#config.googleProjectId
 	}, {
-		name: "REDIS_URL"
+		name:  "REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
-		name: "GENERALSCHEDULER_TOPIC"
+		name:  "GENERALSCHEDULER_TOPIC"
 		value: "message-queue"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
-		key: "GQL_ACCESS_TOKEN"
+		key:  "GQL_ACCESS_TOKEN"
 	}, {
 		name: "SEGMENT_WRITE_KEY"
 		key:  "SEGMENT_WRITE_KEY"

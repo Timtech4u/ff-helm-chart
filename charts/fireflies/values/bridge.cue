@@ -3,7 +3,7 @@ package fireflies
 bridge: {
 	fullnameOverride: "bridge"
 	secretProject:    _#config.googleProjectId
-	replicaCount:        1
+	replicaCount:     1
 	image: url: "ghcr.io/firefliesai/bridge-ff/bridge-ff"
 	ports: [{
 		name:   "http"
@@ -30,6 +30,9 @@ bridge: {
 	extraSecrets: [{
 		name: "K8S_PUPPET_DISPATCH_STRING"
 		key:  "K8S_PUPPET_DISPATCH_STRING"
+	}, {
+		name: "SENTRY_DSN_URL"
+		key:  "SENTRY_DSN_URL"
 	}]
 	extraEnv: [{
 		name:  "googleProjectId"
@@ -61,6 +64,9 @@ bridge: {
 	}, {
 		name: "NODE_ENV"
 		valueFrom: fieldRef: fieldPath: "metadata.namespace"
+	}, {
+		name:  "GQL_URL"
+		value: "http://bot-fireflies.private.svc.cluster.local:8001/graphql"
 	}]
 	ingress: {
 		enabled:   true
@@ -82,5 +88,5 @@ bridge: {
 	}
 	terminationGracePeriodSeconds: 80
 	backendConfig: enabled: true
-	linkerd: inject: "enabled"
+	linkerd: inject:        "enabled"
 }

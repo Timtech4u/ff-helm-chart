@@ -61,7 +61,7 @@ download: {
 		value: "mongodb+srv://$(MONGO_USERNAME):$(MONGO_PASSWORD)@parse-svc.private.svc.cluster.local/use-notes-0?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}, {
 		name:  "GQL_URL"
-		value: "https://bot.firefliesapp.com/graphql"
+		value: "http://bot-fireflies.private.svc.cluster.local:8001/graphql"
 	}, {
 		name: "NODE_ENV"
 		valueFrom: fieldRef: fieldPath: "metadata.namespace"
@@ -75,10 +75,10 @@ download: {
 		name:  "FIREFLIES_ORIGIN"
 		value: "https://app.fireflies.dev"
 	}, {
-		name: "AWS_BUCKET_REGION"
+		name:  "AWS_BUCKET_REGION"
 		value: "auto"
 	}, {
-		name: "AWS_BUCKET_ID"
+		name:  "AWS_BUCKET_ID"
 		value: "ff-private-download"
 	}]
 	extraSecrets: [{

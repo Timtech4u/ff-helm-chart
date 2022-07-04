@@ -19,9 +19,6 @@ apollo: {
 		}
 	}
 	extraSecrets: [{
-		name: "GQL_URL"
-		key:  "GQL_URL"
-	}, {
 		name: "GQL_ACCESS_TOKEN"
 		key:  "GQL_ACCESS_TOKEN"
 	}, {
@@ -81,9 +78,9 @@ apollo: {
 	}, {
 		name: "DEEPGRAM_PASSWORD"
 		key:  "DEEPGRAM_PASSWORD"
-	} ]
+	}]
 	extraEnv: [{
-		name: "REDIS_URL"
+		name:  "REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
 		name: "MONGO_USERNAME"
@@ -106,8 +103,8 @@ apollo: {
 	}, {
 		name: "PARSE_PASSWORD"
 		valueFrom: secretKeyRef: {
-				name: _#config.secretName
-				key:  "password"
+			name: _#config.secretName
+			key:  "password"
 		}
 	}, {
 		name:  "USE_NOTES_MONGO_URL"
@@ -121,6 +118,9 @@ apollo: {
 	}, {
 		name:  "USE_GOOGLE_SECRETS"
 		value: "true"
+	}, {
+		name:  "GQL_URL"
+		value: "http://bot-fireflies.private.svc.cluster.local:8001/graphql"
 	}]
 	ingress: {
 		annotations: {

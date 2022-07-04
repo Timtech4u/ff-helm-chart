@@ -75,7 +75,7 @@ dashboard: {
 		value: "https://private.fireflies.dev"
 	}, {
 		name:  "GQL_URL"
-		value: "https://bot.private.fireflies.dev/graphql"
+		value: "http://bot-fireflies.private.svc.cluster.local:8001/graphql"
 	}, {
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
@@ -140,13 +140,13 @@ dashboard: {
 		name:  "USER_SERVICE_GRPC_ENABLE_INSECURE"
 		value: "enabled"
 	}, {
-		name: "SERVICE_NAME"
+		name:  "SERVICE_NAME"
 		value: "dashboard"
 	}, {
-		name: "IS_DEV"
+		name:  "IS_DEV"
 		value: "true"
 	}, {
-		name: "APOLLO_GRAPH_REF"
+		name:  "APOLLO_GRAPH_REF"
 		value: "ff-federated-graph@staging"
 	}]
 	extraSecrets: [{
@@ -217,7 +217,7 @@ dashboard: {
 		key:  "GOOGLE_SECRET"
 	}, {
 		name: "APOLLO_KEY"
-		key: "APOLLO_KEY"
+		key:  "APOLLO_KEY"
 	}]
 	ingress: {
 		enabled:   true

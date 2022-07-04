@@ -124,6 +124,15 @@ audio: {
 	}, {
 		name:  "GOOGLE_PROJECT_ID"
 		value: _#config.googleProjectId
+	}, {
+		name:  "GQL_URL"
+		value: "http://bot-fireflies.private.svc.cluster.local:8001/graphql"
+	}, {
+		name:  "USER_SERVICE_GRPC_ENDPOINT"
+		value: "user-service.private.svc.cluster.local:50051"
+	}, {
+		name:  "USER_SERVICE_GRPC_ENDPOINT"
+		value: "user-service.private.svc.cluster.local:50051"
 	}]
 	extraSecrets: [{
 		name: "REDIS_URL"
@@ -176,6 +185,9 @@ audio: {
 	}, {
 		name: "K8S_PUPPET_DISPATCH_STRING"
 		key:  "K8S_PUPPET_DISPATCH_STRING"
+	}, {
+		name: "GROWTHBOOK_API_KEY"
+		key:  "GROWTHBOOK_API_KEY"
 	}]
 	ingress: {
 		enabled:   true
