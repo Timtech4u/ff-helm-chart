@@ -19,6 +19,10 @@ package fireflies
 			memory: "450Mi"
 		}
 	}
+	serviceAccount: {
+		create: false
+		name:   "fireflies"
+	}
 	volumes: [{
 		name: "google-cloud-key"
 		secret: secretName: "pubsub-key"
