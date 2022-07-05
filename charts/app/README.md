@@ -42,6 +42,7 @@ A basic helm chart for deploying application on Fireflies
 | probes.liveness.mode | string | `"http"` | Liveness probe method to be used. Only 3 valid options: http, tcp and command |
 | probes.liveness.path | string | `"/"` | livenes probes target path |
 | probes.liveness.periodSeconds | int | `10` | How often (in seconds) to perform the probe. |
+| probes.liveness.timeoutSeconds | int | `5` | How often (in seconds) to timeout the probe. |
 | probes.liveness.port | int | `80` | liveness probes target port |
 | probes.readiness.command | list | `[]` | Readiness probes command (for command mode) |
 | probes.readiness.enabled | bool | `false` | Enable readiness probes |
@@ -49,6 +50,7 @@ A basic helm chart for deploying application on Fireflies
 | probes.readiness.mode | string | `"http"` | Readiness probe method to be used. Only 3 valid options: http, tcp and command |
 | probes.readiness.path | string | `"/"` | Readiness probes target path |
 | probes.readiness.periodSeconds | int | `10` | How often (in seconds) to perform the probe. |
+| probes.liveness.timeoutSeconds | int | `5` | How often (in seconds) to timeout the probe. |
 | probes.readiness.port | int | `80` | Readiness probes target port |
 | replicaCount | int | `1` | The desired number of pod |
 | resources.limits.cpu | string | `"200m"` | Configure CPU limits for the pod. |

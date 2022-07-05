@@ -140,6 +140,8 @@ probes:
     initialDelaySeconds: 0
     # -- How often (in seconds) to perform the probe.
     periodSeconds: 10
+    timeoutSeconds: 5
+    # -- How often (in seconds) to timeout the probe.
   readiness:
     # -- Enable readiness probes
     enabled: false
@@ -155,6 +157,7 @@ probes:
     initialDelaySeconds: 0
     # -- How often (in seconds) to perform the probe.
     periodSeconds: 10
+    timeoutSeconds: 5
 
 backendConfig:
   # -- Enable Backend Config
