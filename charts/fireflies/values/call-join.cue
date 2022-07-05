@@ -28,6 +28,9 @@ package fireflies
 		mountPath: "/var/secrets/google"
 	}]
 	extraEnv: [{
+		name:  "K8S_RANCHER_TOPIC"
+		value: "k8s-join-queue"
+	}, {
 		name:  "K8S_POD_TOPIC"
 		value: "k8s-join-queue"
 	}, {
