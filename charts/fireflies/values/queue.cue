@@ -90,11 +90,23 @@ queue: {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
 	}, {
-		name: "PUPPET_REDIS_URL"
+		name:  "PUPPET_REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
-		name: "REDIS_URL"
+		name:  "REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
+	}, {
+		name:  "SCHEDULER_JOB_QUEUE"
+		value: "STAGING_SCHEDULER_JOB_QUEUE"
+	}, {
+		name:  "SCHEDULER_JOB_QUEUE_TOPIC"
+		value: "SCHEDULER_JOB_QUEUE_TOPIC"
+	}, {
+		name:  "SCHEDULER_JOB_MAX_CONCURRENCY"
+		value: "100"
+	}, {
+		name:  "SCHEDULER_JOB_REMOVE_ONCOMPLETE"
+		value: "true"
 	}]
 	extraSecrets: [{
 		name: "K8S_PUPPET_DISPATCH_STRING"

@@ -28,7 +28,7 @@ package fireflies
 		mountPath: "/var/secrets/google"
 	}]
 	extraEnv: [{
-		name: "CALENDAR_WATCH_SERVICE_NAME"
+		name:  "CALENDAR_WATCH_SERVICE_NAME"
 		value: "calendar-watch"
 	}, {
 		name:  "USER_SERVICE_GRPC_URL"

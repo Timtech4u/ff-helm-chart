@@ -131,19 +131,19 @@ package fireflies
 		name:  "USER_RPC_SERVER_ADDRESS"
 		value: "user-service.private.svc.cluster.local:50051"
 	}, {
-		name: "SENTRY_DSN_URL"
+		name:  "SENTRY_DSN_URL"
 		value: "https://cb8f7bb624784da4bd72ede8d5f0fbf4@o207331.ingest.sentry.io/1548795"
 	}, {
-		name: "CONCURRENT_MESSAGES"
+		name:  "CONCURRENT_MESSAGES"
 		value: "10"
 	}, {
-		name: "REDIS_URL"
+		name:  "REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
-		name: "AUTOJOIN_JOB_MAX_SECONDS"
+		name:  "AUTOJOIN_JOB_MAX_SECONDS"
 		value: "30"
 	}, {
-		name: "USER_RPC_CLIENT_SERVICE_NAME"
+		name:  "USER_RPC_CLIENT_SERVICE_NAME"
 		value: "autojoin-worker-ff"
 	}]
 	extraSecrets: [{

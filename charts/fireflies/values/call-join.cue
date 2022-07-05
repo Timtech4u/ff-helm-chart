@@ -187,6 +187,9 @@ package fireflies
 	}, {
 		name:  "CALL_JOIN_SERVICE_NAME"
 		value: "call-join"
+	}, {
+		name:  "USER_RPC_ENABLE_INSECURE"
+		value: "enabled"
 	}]
 	extraSecrets: [{
 		name: "K8S_PUPPET_DISPATCH_STRING"

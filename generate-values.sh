@@ -2,6 +2,9 @@
 
 set -e
 
+echo "Formatting"
+cue fmt ./charts/fireflies/values
+
 echo "Validating"
 cue vet -p fireflies \
 --strict \

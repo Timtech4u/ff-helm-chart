@@ -255,11 +255,14 @@ package fireflies
 		name:  "USER_RPC_ENABLE_INSECURE"
 		value: "enabled"
 	}, {
-		name: "REDIS_URL"
+		name:  "REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
-		name: "PUPPET_REDIS_URL"
+		name:  "PUPPET_REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
+	}, {
+		name:  "USER_EVENT_QUEUE_BOT_FF_SUBSCRIPTION"
+		value: "user-service-staging-bot-ff-sub"
 	}]
 	extraSecrets: [{
 		name: "GMAIL_STMP_PASS"

@@ -35,6 +35,9 @@ bridge: {
 		key:  "SENTRY_DSN_URL"
 	}]
 	extraEnv: [{
+		name:  "GOOGLE_PROJECT_ID"
+		value: _#config.googleProjectId
+	}, {
 		name:  "googleProjectId"
 		value: _#config.googleProjectId
 	}, {
@@ -67,12 +70,15 @@ bridge: {
 	}, {
 		name:  "GQL_URL"
 		value: "http://bot-fireflies.private.svc.cluster.local:8001/graphql"
+	}, {
+		name:  "PUB_SUB_SUBSCRIPTION"
+		value: "puppet-queue-sub"
 	}]
 	ingress: {
 		enabled:   true
 		className: "nginx"
 		hosts: [{
-			host: "bridge-ff.fireflies.dev"
+			host: "bridge-ff.private.fireflies.dev"
 			paths: [{
 				path:     "/"
 				pathType: "Prefix"
@@ -81,9 +87,9 @@ bridge: {
 		}]
 		tls: [{
 			hosts: [
-				"bridge-ff.fireflies.dev",
+				"bridge-ff.private.fireflies.dev",
 			]
-			secretName: "bridge-tls-secret"
+			secretName: "bridge-private-tls-secret"
 		}]
 	}
 	terminationGracePeriodSeconds: 80

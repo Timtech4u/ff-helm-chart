@@ -37,10 +37,10 @@ package fireflies
 		}]
 	}
 	extraEnv: [{
-		name: "K8S_TARGET_NAMESPACE"
+		name:  "K8S_TARGET_NAMESPACE"
 		value: "private"
 	}, {
-		name: "K8S_USE_IN_CLUSTER_ACCESS"
+		name:  "K8S_USE_IN_CLUSTER_ACCESS"
 		value: "true"
 	}, {
 		name:  "googleProjectId"
@@ -125,10 +125,10 @@ package fireflies
 			}]
 			"""
 	}, {
-		name: "PUPPET_REDIS_URL"
+		name:  "PUPPET_REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
-		name: "REDIS_URL"
+		name:  "REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}]
 
