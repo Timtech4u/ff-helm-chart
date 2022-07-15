@@ -193,6 +193,12 @@ package fireflies
 	}, {
 		name:  "USER_RPC_ENABLE_INSECURE"
 		value: "enabled"
+	}, {
+		name:  "PUPPET_DESKTOP_IMAGE"
+		value: "ghcr.io/firefliesai/puppet-desktop/puppet-desktop:90d12c2e"
+	}, {
+		name:  "PUPPET_IMAGE"
+		value: "ghcr.io/firefliesai/puppet-runner/puppet-runner:6c96905f"
 	}]
 	extraSecrets: [{
 		name: "K8S_PUPPET_DISPATCH_STRING"
