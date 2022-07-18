@@ -1,7 +1,9 @@
 #!/bin/env bash
 
+echo "Validating Manifests on $1"
+
 # Do it for all
-cue vet -p argo ./argocd $1/*.yaml
+cue vet -E -p argo -d '#Schema' ./argocd $1/*.yaml
 RESULT=$?
 
 # If fail, check one by one
@@ -11,12 +13,9 @@ if [ $RESULT -ne 0 ]; then
     for yaml in $1/*.yaml
     do
         FILENAME="$(basename $yaml)"
-        if [ $FILENAME = "kustomization.yaml" ]
-        then
-            continue;
-        else
-            echo "Evaluating $FILENAME"
-            cue vet -p argo ./argocd $yaml
-        fi
+        echo "Evaluating $FILENAME"
+        cue vet -p argo -d '#Schema' ./argocd $yaml
     done
 fi
+
+echo "Validation succeeded"
