@@ -33,15 +33,9 @@ import (
 
     _parsed : yaml.Unmarshal(spec.source.helm.values)
 
-    // Default values for env and secret
-    _allEnvs: {
-        extraEnv: _parsed.extraEnv | *[]
-        extraSecrets: _parsed.extraSecrets | *[]
-    }
-
     // Make sure env var is unique on either extraEnv and extraSecrets
     _envVarNameMustBeUnique : true
-    _envVarNameMustBeUnique : list.UniqueItems([for _, i in _allEnvs.extraEnv {i.name}, for _, i in _allEnvs.extraSecrets {i.name}])
+    _envVarNameMustBeUnique : list.UniqueItems([for _, i in _parsed.extraEnv {i.name}, for _, i in _parsed.extraSecrets {i.name}])
 }
 
 #FFAppSet : {
