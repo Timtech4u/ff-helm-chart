@@ -92,7 +92,7 @@ package fireflies
 		value: "true"
 	}, {
 		name:  "ELASTIC_SEARCH_URL"
-		value: "https://use-notes-staging-kc2j5-205-es.qbox2.com:31877"
+		value: "http://10.128.0.68:9200"
 	}, {
 		name:  "GCLOUD_PROJECT"
 		value: _#config.googleProjectId

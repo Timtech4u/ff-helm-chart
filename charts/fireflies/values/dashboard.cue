@@ -19,6 +19,14 @@ dashboard: {
 			memory: "500Mi"
 		}
 	}
+	volumes: [{
+		name: "google-cloud-key"
+		secret: secretName: "pubsub-key"
+	}]
+	volumeMounts: [{
+		name:      "google-cloud-key"
+		mountPath: "/var/secrets/google"
+	}]
 	extraEnv: [{
 		name:  "PORT"
 		value: "3000"
@@ -148,6 +156,9 @@ dashboard: {
 	}, {
 		name:  "APOLLO_GRAPH_REF"
 		value: "ff-federated-graph@staging"
+	}, {
+		name:  "GOOGLE_PROJECT_ID"
+		value: "ff-private-cloud"
 	}]
 	extraSecrets: [{
 		name: "ADMIN_MEETING_NOTE_EDIT"
