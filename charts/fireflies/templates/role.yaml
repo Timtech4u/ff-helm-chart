@@ -7,8 +7,10 @@ rules:
       - ""
     resources:
       - secrets
+      - services
     verbs:
       - get
+      - create
   - apiGroups:
       - batch
     resources:
