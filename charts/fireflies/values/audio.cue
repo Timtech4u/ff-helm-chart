@@ -131,8 +131,11 @@ audio: {
 		name:  "USER_SERVICE_GRPC_ENDPOINT"
 		value: "user-service.private.svc.cluster.local:50051"
 	}, {
-		name:  "USER_SERVICE_GRPC_ENDPOINT"
-		value: "user-service.private.svc.cluster.local:50051"
+		name:  "WORKER_IDLE_TOLERANCE_MINUTES"
+		value: "60"
+	}, {
+		name:  "USER_RPC_ENABLE_INSECURE"
+		value: "enabled"
 	}]
 	extraSecrets: [{
 		name: "REDIS_URL"
@@ -185,6 +188,9 @@ audio: {
 	}, {
 		name: "K8S_PUPPET_DISPATCH_STRING"
 		key:  "K8S_PUPPET_DISPATCH_STRING"
+	}, {
+		name: "SEGMENT_WRITE_KEY"
+		key:  "SEGMENT_WRITE_KEY"
 	}, {
 		name: "GROWTHBOOK_API_KEY"
 		key:  "GROWTHBOOK_API_KEY"

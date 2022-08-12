@@ -164,8 +164,14 @@ dashboard: {
 		name: "ADMIN_MEETING_NOTE_EDIT"
 		key:  "ADMIN_MEETING_NOTE_EDIT"
 	}, {
+		name: "APOLLO_KEY"
+		key:  "APOLLO_KEY"
+	}, {
 		name: "AUDIO_WORKER_AUTH"
 		key:  "AUDIO_WORKER_AUTH"
+	}, {
+		name: "CDN_URL"
+		key:  "CDN_URL"
 	}, {
 		name: "ELASTIC_SEARCH_AUTH"
 		key:  "ELASTIC_SEARCH_AUTH"
@@ -227,8 +233,14 @@ dashboard: {
 		name: "GOOGLE_SECRET"
 		key:  "GOOGLE_SECRET"
 	}, {
-		name: "APOLLO_KEY"
-		key:  "APOLLO_KEY"
+		name: "KEY_PAIR_ID"
+		key:  "KEY_PAIR_ID"
+	}, {
+		name: "PRIVATE_KEY_STRING"
+		key:  "PRIVATE_KEY_STRING"
+	}, {
+		name: "PUBLIC_KEY_STRING"
+		key:  "PUBLIC_KEY_STRING"
 	}]
 	ingress: {
 		enabled:   true
