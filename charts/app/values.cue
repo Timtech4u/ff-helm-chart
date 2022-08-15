@@ -126,6 +126,8 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 			initialDelaySeconds: int | *0
 			// -- How often (in seconds) to perform the probe.
 			periodSeconds: int | *10
+			// -- Probes timeout
+			timeoutSeconds: int | *5
 		}
 		readiness?: {
 			// -- Enable readiness probes
@@ -150,6 +152,8 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 			initialDelaySeconds: int | *0
 			// -- How often (in seconds) to perform the probe.
 			periodSeconds: int | *10
+			// -- Probes timeout
+			timeoutSeconds: int | *5
 		}
 	}
 
@@ -171,12 +175,12 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 	extraSecrets?: [...{
 		key: string
 		name: string
-	}]
+	}] | *[]
 
 	// -- Override secret key from Google Secret Manager
 	overrideSecretKey?: null
 
-	extraEnv?: [...apiV1.#EnvVar]
+	extraEnv?: [...apiV1.#EnvVar] | *[]
 
 	secretProject?: string
 

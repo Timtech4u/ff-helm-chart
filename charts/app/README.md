@@ -42,16 +42,16 @@ A basic helm chart for deploying application on Fireflies
 | probes.liveness.mode | string | `"http"` | Liveness probe method to be used. Only 3 valid options: http, tcp and command |
 | probes.liveness.path | string | `"/"` | livenes probes target path |
 | probes.liveness.periodSeconds | int | `10` | How often (in seconds) to perform the probe. |
-| probes.liveness.timeoutSeconds | int | `5` | How often (in seconds) to timeout the probe. |
 | probes.liveness.port | int | `80` | liveness probes target port |
+| probes.liveness.timeoutSeconds | int | `5` | Probes timeout in second |
 | probes.readiness.command | list | `[]` | Readiness probes command (for command mode) |
 | probes.readiness.enabled | bool | `false` | Enable readiness probes |
 | probes.readiness.initialDelaySeconds | int | `0` | Number of seconds after the container has started before probes are initiated. |
 | probes.readiness.mode | string | `"http"` | Readiness probe method to be used. Only 3 valid options: http, tcp and command |
 | probes.readiness.path | string | `"/"` | Readiness probes target path |
 | probes.readiness.periodSeconds | int | `10` | How often (in seconds) to perform the probe. |
-| probes.liveness.timeoutSeconds | int | `5` | How often (in seconds) to timeout the probe. |
 | probes.readiness.port | int | `80` | Readiness probes target port |
+| probes.readiness.timeoutSeconds | int | `5` | Probes timeout in second |
 | replicaCount | int | `1` | The desired number of pod |
 | resources.limits.cpu | string | `"200m"` | Configure CPU limits for the pod. |
 | resources.limits.memory | string | `"256Mi"` | Configure Memory limit for the pod. This is the hard limit resources, so whenever your application uses more than the limit, it could throw OOM error. |
