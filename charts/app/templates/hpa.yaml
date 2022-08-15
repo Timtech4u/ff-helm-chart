@@ -4,6 +4,7 @@ apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   annotations:
+    argocd.argoproj.io/sync-options: Validate=false
     {{- include "app.annotations" . | nindent 4 }}
   name: {{ include "app.fullname" . }}
   labels:
