@@ -33,6 +33,12 @@ bridge: {
 	}, {
 		name: "SENTRY_DSN_URL"
 		key:  "SENTRY_DSN_URL"
+	}, {
+		name: "AUDIO_SERVICE_TOKEN"
+		key:  "AUDIO_SERVICE_TOKEN"
+	}, {
+		name: "BUCKET"
+		key:  "BUCKET"
 	}]
 	extraEnv: [{
 		name:  "GOOGLE_PROJECT_ID"
@@ -73,6 +79,12 @@ bridge: {
 	}, {
 		name:  "PUB_SUB_SUBSCRIPTION"
 		value: "puppet-queue-sub"
+	}, {
+		name:  "AUDIO_SERVICE"
+		value: "http://audio.private.svc.cluster.local:3000"
+	}, {
+		name:  "USER_SERVICE_GRPC_ENDPOINT"
+		value: "user-service.private.svc.cluster.local:50051"
 	}]
 	ingress: {
 		enabled:   true

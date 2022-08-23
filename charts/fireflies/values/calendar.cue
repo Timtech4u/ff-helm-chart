@@ -69,6 +69,12 @@ calendar: {
 	}, {
 		name:  "GENERALSCHEDULER_TOPIC"
 		value: "message-queue"
+	}, {
+		name:  "USER_RPC_ENABLE_INSECURE"
+		value: "true"
+	}, {
+		name:  "USER_RPC_SERVER_ADDRESS"
+		value: "user-service.private.svc.cluster.local:50051"
 	}]
 	extraSecrets: [{
 		name: "GQL_ACCESS_TOKEN"
