@@ -136,65 +136,122 @@ audio: {
 	}, {
 		name:  "USER_RPC_ENABLE_INSECURE"
 		value: "enabled"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "REDIS_URL"
-		key:  "REDIS_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "REDIS_URL"
+		}
 	}, {
 		name: "REV_TOKEN"
-		key:  "REV_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "REV_TOKEN"
+		}
 	}, {
 		name: "SENDGRID_API_KEY"
-		key:  "SENDGRID_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SENDGRID_API_KEY"
+		}
 	}, {
 		name: "GQL_AUTH"
-		key:  "GQL_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_AUTH"
+		}
 	}, {
 		name: "CRON_SERVICE_TOKEN"
-		key:  "CRON_SERVICE_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "CRON_SERVICE_TOKEN"
+		}
 	}, {
 		name: "AWS_ACCESS_KEY_ID"
-		key:  "AWS_ACCESS_KEY_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AWS_ACCESS_KEY_ID"
+		}
 	}, {
 		name: "AWS_SECRET_ACCESS_KEY"
-		key:  "AWS_SECRET_ACCESS_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AWS_SECRET_ACCESS_KEY"
+		}
 	}, {
 		name: "ELASTIC_SEARCH_AUTH"
-		key:  "ELASTIC_SEARCH_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ELASTIC_SEARCH_AUTH"
+		}
 	}, {
 		name: "WORKFLOW_SERVICE_AUTH"
-		key:  "WORKFLOW_SERVICE_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "WORKFLOW_SERVICE_AUTH"
+		}
 	}, {
 		name: "ASSEMBLY_TOKEN"
-		key:  "ASSEMBLY_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ASSEMBLY_TOKEN"
+		}
 	}, {
 		name: "API_KEY"
-		key:  "API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "API_KEY"
+		}
 	}, {
 		name: "OPEN_AI_API_KEY"
-		key:  "OPEN_AI_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OPEN_AI_API_KEY"
+		}
 	}, {
 		name: "SLACK_ACCESS_TOKEN"
-		key:  "SLACK_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SLACK_ACCESS_TOKEN"
+		}
 	}, {
 		name: "SLACK_BOT_IMAGE"
-		key:  "SLACK_BOT_IMAGE"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SLACK_BOT_IMAGE"
+		}
 	}, {
 		name: "API_FF_TOKEN"
-		key:  "API_FF_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "API_FF_TOKEN"
+		}
 	}, {
 		name: "WORD_CAB_API_KEY"
-		key:  "WORD_CAB_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "WORD_CAB_API_KEY"
+		}
 	}, {
 		name: "K8S_PUPPET_DISPATCH_STRING"
-		key:  "K8S_PUPPET_DISPATCH_STRING"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "K8S_PUPPET_DISPATCH_STRING"
+		}
 	}, {
 		name: "SEGMENT_WRITE_KEY"
-		key:  "SEGMENT_WRITE_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SEGMENT_WRITE_KEY"
+		}
 	}, {
 		name: "GROWTHBOOK_API_KEY"
-		key:  "GROWTHBOOK_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GROWTHBOOK_API_KEY"
+		}
 	}]
+	extraSecrets: []
 	ingress: {
 		enabled:   true
 		className: "nginx"
