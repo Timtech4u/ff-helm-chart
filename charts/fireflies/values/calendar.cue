@@ -75,50 +75,92 @@ calendar: {
 	}, {
 		name:  "USER_RPC_SERVER_ADDRESS"
 		value: "user-service.private.svc.cluster.local:50051"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "GQL_ACCESS_TOKEN"
-		key:  "GQL_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_ACCESS_TOKEN"
+		}
 	}, {
 		name: "SEGMENT_WRITE_KEY"
-		key:  "SEGMENT_WRITE_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SEGMENT_WRITE_KEY"
+		}
 	}, {
 		name: "BASIC_AUTH_USERNAME"
-		key:  "BASIC_AUTH_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "BASIC_AUTH_USERNAME"
+		}
 	}, {
 		name: "BASIC_AUTH_PASSWORD"
-		key:  "BASIC_AUTH_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "BASIC_AUTH_PASSWORD"
+		}
 	}, {
 		name: "OUTLOOK_CLIENT_ID"
-		key:  "OUTLOOK_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_CLIENT_ID"
+		}
 	}, {
 		name: "OUTLOOK_SECRED"
-		key:  "OUTLOOK_SECRED"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_SECRED"
+		}
 	}, {
 		name: "OUTLOOK_TENANT"
-		key:  "OUTLOOK_TENANT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_TENANT"
+		}
 	}, {
 		name: "GOOGLE_CLIENT_ID"
-		key:  "GOOGLE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_CLIENT_ID"
+		}
 	}, {
 		name: "GOOGLE_SECRET"
-		key:  "GOOGLE_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_SECRET"
+		}
 	}, {
 		name: "OAUTH_CLIENT_ID"
-		key:  "OAUTH_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_ID"
+		}
 	}, {
 		name: "OAUTH_CLIENT_SECRET"
-		key:  "OAUTH_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_SECRET"
+		}
 	}, {
 		name: "OFFICE_CLIENT_ID"
-		key:  "OFFICE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_ID"
+		}
 	}, {
 		name: "OFFICE_CLIENT_SECRET"
-		key:  "OFFICE_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_SECRET"
+		}
 	}, {
 		name: "SENTRY_DSN_URL"
-		key:  "SENTRY_DSN_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SENTRY_DSN_URL"
+		}
 	}]
+	extraSecrets: []
 	ingress: {
 		enabled:   false
 		className: "nginx"

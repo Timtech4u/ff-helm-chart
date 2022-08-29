@@ -22,13 +22,13 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | K8S_PUPPET_DISPATCH_STRING | audio, bridge | Seems like we just need to automatically generate this? |
 | SEGMENT_WRITE_KEY | audio, apollo, autojoin-worker | |
 | GROWTHBOOK_API_KEY | audio | |
-| GQL_ACCESS_TOKEN | apollo, autojoin-worker | |
+| GQL_ACCESS_TOKEN | apollo, autojoin-worker, calendar | |
 | SERVER_IP | apollo | |
 | SERVER_PORT | apollo | |
 | WINSTON_TOKEN | apollo | |
 | WINSTON_SUBDOMAIN | apollo | |
-| OAUTH_CLIENT_ID | apollo, autojoin-worker | |
-| OAUTH_CLIENT_SECRET | apollo, autojoin-worker | |
+| OAUTH_CLIENT_ID | apollo, autojoin-worker, bot-fireflies, calendar | |
+| OAUTH_CLIENT_SECRET | apollo, autojoin-worker, bot-fireflies, calendar | |
 | RABBIT_MQ_URL | apollo | |
 | AUTO_JOIN_WORKER_QUEUE | apollo | |
 | GCLOUD_PROJECT | apollo | |
@@ -44,13 +44,13 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | OVERWRITE_CHANNEL_ID | autojoin-worker | |
 | REPORT_CHANNEL_ID | autojoin-worker | |
 | SLACK_CHANNEL_ID | autojoin-worker | |
-| OFFICE_CLIENT_ID | autojoin-worker | |
-| OFFICE_CLIENT_SECRET | autojoin-worker | |
+| OFFICE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar | |
+| OFFICE_CLIENT_SECRET | autojoin-worker, bot-fireflies, calendar | |
 | QUEUE_PREFIX | autojoin-worker | |
-| GOOGLE_CLIENT_ID | autojoin-worker | |
-| GOOGLE_SECRET | autojoin-worker | |
-| OUTLOOK_CLIENT_ID | autojoin-worker | |
-| OUTLOOK_SECRET | autojoin-worker | |
+| GOOGLE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar | |
+| GOOGLE_SECRET | autojoin-worker, bot-fireflies, calendar | |
+| OUTLOOK_CLIENT_ID | autojoin-worker, bot-fireflies, calendar | |
+| OUTLOOK_SECRET | autojoin-worker, bot-fireflies, calendar | |
 | GMAIL_STMP_PASS | bot-fireflies | |
 | GMAIL_STMP_USER | bot-fireflies | |
 | ADMIN_MEETING_NOTE_EDIT | bot-fireflies | |
@@ -78,16 +78,14 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | NJWT_ACCESS_TOKEN | bot-fireflies | |
 | NJWT_REFRESH_TOKEN | bot-fireflies | |
 | NOW_TOKEN | bot-fireflies | |
-| OAUTH_CLIENT_ID | bot-fireflies | |
 | OAUTH_CLIENT_SECRET | bot-fireflies | |
-| OFFICE_CLIENT_ID | bot-fireflies | |
 | PAPERSPACE_API_KEY | bot-fireflies | |
 | PARSE_PASSWORD | bot-fireflies | |
 | PARTCIPANT_DISPATCH_AUTH | bot-fireflies | |
 | PAYMENTS_FF_AUTH_USERNAME | bot-fireflies | |
 | PAYMENTS_FF_AUTH_PASSWORD | bot-fireflies | |
 | PROD_SLACK_CLIENT_SECRET | bot-fireflies | |
-| SEGMENT_WRITE_KEY | bot-fireflies | |
+| SEGMENT_WRITE_KEY | bot-fireflies, calendar | |
 | SENDGRID_API_KEY | bot-fireflies | |
 | SLACK_BOT_TOKEN | bot-fireflies | |
 | SLACK_SIGNING_SECRET | bot-fireflies | |
@@ -98,14 +96,12 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | WATSON_STT_PASS | bot-fireflies | |
 | WATSON_STT_USERNAME | bot-fireflies | |
 | WINSTON_TOKEN | bot-fireflies | |
-| GOOGLE_CLIENT_ID | bot-fireflies | |
-| GOOGLE_SECRET | bot-fireflies | |
-| OUTLOOK_CLIENT_ID | bot-fireflies | |
-| OUTLOOK_SECRET | bot-fireflies | |
-| OFFICE_CLIENT_SECRET | bot-fireflies | |
-| SENTRY_DSN_URL | bridge | |
+| SENTRY_DSN_URL | bridge, calendar | |
 | AUDIO_SERVICE_TOKEN | bridge | |
 | BUCKET | bridge | |
+| BASIC_AUTH_USERNAME | calendar | |
+| BASIC_AUTH_PASSWORD | calendar | |
+| OUTLOOK_TENANT | calendar | |
 
 
 # Example
