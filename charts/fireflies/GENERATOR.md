@@ -22,6 +22,25 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | K8S_PUPPET_DISPATCH_STRING | audio | Seems like we just need to automatically generate this? |
 | SEGMENT_WRITE_KEY | audio | |
 | GROWTHBOOK_API_KEY | audio | |
+| GQL_ACCESS_TOKEN | apollo | |
+| SERVER_IP | apollo | |
+| SERVER_PORT | apollo | |
+| WINSTON_TOKEN | apollo | |
+| WINSTON_SUBDOMAIN | apollo | |
+| OAUTH_CLIENT_ID | apollo | |
+| OAUTH_CLIENT_SECRET | apollo | |
+| AUTO_JOIN_WORKER_QUEUE | apollo | |
+| GCLOUD_PROJECT | apollo | |
+| TWILIO_ACCOUNT_SID | apollo | |
+| TWILIO_AUTH_TOKEN | apollo | |
+| SEGMENT_WRITE_KEY | apollo | |
+| TZ | apollo | |
+| CALL_JOIN_URL | apollo | |
+| CJ_URL | apollo | |
+| CAPTCHA_API_KEY | apollo | |
+| TRANSCODER_FF_URL | apollo | |
+| DEEPGRAM_USERNAME | apollo | |
+| DEEPGRAM_PASSWORD | apollo | |
 
 # Example
 

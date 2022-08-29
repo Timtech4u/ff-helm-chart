@@ -18,67 +18,7 @@ apollo: {
 			memory: "1.9Gi"
 		}
 	}
-	extraSecrets: [{
-		name: "GQL_ACCESS_TOKEN"
-		key:  "GQL_ACCESS_TOKEN"
-	}, {
-		name: "SERVER_IP"
-		key:  "SERVER_IP"
-	}, {
-		name: "SERVER_PORT"
-		key:  "SERVER_PORT"
-	}, {
-		name: "WINSTON_TOKEN"
-		key:  "WINSTON_TOKEN"
-	}, {
-		name: "WINSTON_SUBDOMAIN"
-		key:  "WINSTON_SUBDOMAIN"
-	}, {
-		name: "OAUTH_CLIENT_ID"
-		key:  "OAUTH_CLIENT_ID"
-	}, {
-		name: "OAUTH_CLIENT_SECRET"
-		key:  "OAUTH_CLIENT_SECRET"
-	}, {
-		name: "RABBIT_MQ_URL"
-		key:  "RABBIT_MQ_URL"
-	}, {
-		name: "AUTO_JOIN_WORKER_QUEUE"
-		key:  "AUTO_JOIN_WORKER_QUEUE"
-	}, {
-		name: "GCLOUD_PROJECT"
-		key:  "GCLOUD_PROJECT"
-	}, {
-		name: "TWILIO_ACCOUNT_SID"
-		key:  "TWILIO_ACCOUNT_SID"
-	}, {
-		name: "TWILIO_AUTH_TOKEN"
-		key:  "TWILIO_AUTH_TOKEN"
-	}, {
-		name: "SEGMENT_WRITE_KEY"
-		key:  "SEGMENT_WRITE_KEY"
-	}, {
-		name: "TZ"
-		key:  "TZ"
-	}, {
-		name: "CALL_JOIN_URL"
-		key:  "CALL_JOIN_URL"
-	}, {
-		name: "CJ_URL"
-		key:  "CJ_URL"
-	}, {
-		name: "CAPTCHA_API_KEY"
-		key:  "CAPTCHA_API_KEY"
-	}, {
-		name: "TRANSCODER_FF_URL"
-		key:  "TRANSCODER_FF_URL"
-	}, {
-		name: "DEEPGRAM_USERNAME"
-		key:  "DEEPGRAM_USERNAME"
-	}, {
-		name: "DEEPGRAM_PASSWORD"
-		key:  "DEEPGRAM_PASSWORD"
-	}]
+
 	extraEnv: [{
 		name:  "REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
@@ -121,7 +61,123 @@ apollo: {
 	}, {
 		name:  "GQL_URL"
 		value: "http://bot-fireflies.private.svc.cluster.local:8001/graphql"
+	}, {
+		name: "GQL_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_ACCESS_TOKEN"
+		}
+	}, {
+		name: "SERVER_IP"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SERVER_IP"
+		}
+	}, {
+		name: "SERVER_PORT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SERVER_PORT"
+		}
+	}, {
+		name: "WINSTON_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "WINSTON_TOKEN"
+		}
+	}, {
+		name: "WINSTON_SUBDOMAIN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "WINSTON_SUBDOMAIN"
+		}
+	}, {
+		name: "OAUTH_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_ID"
+		}
+	}, {
+		name: "OAUTH_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_SECRET"
+		}
+	}, {
+		name: "AUTO_JOIN_WORKER_QUEUE"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AUTO_JOIN_WORKER_QUEUE"
+		}
+	}, {
+		name: "GCLOUD_PROJECT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GCLOUD_PROJECT"
+		}
+	}, {
+		name: "TWILIO_ACCOUNT_SID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TWILIO_ACCOUNT_SID"
+		}
+	}, {
+		name: "TWILIO_AUTH_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TWILIO_AUTH_TOKEN"
+		}
+	}, {
+		name: "SEGMENT_WRITE_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SEGMENT_WRITE_KEY"
+		}
+	}, {
+		name: "TZ"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TZ"
+		}
+	}, {
+		name: "CALL_JOIN_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "CALL_JOIN_URL"
+		}
+	}, {
+		name: "CJ_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "CJ_URL"
+		}
+	}, {
+		name: "CAPTCHA_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "CAPTCHA_API_KEY"
+		}
+	}, {
+		name: "TRANSCODER_FF_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TRANSCODER_FF_URL"
+		}
+	}, {
+		name: "DEEPGRAM_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "DEEPGRAM_USERNAME"
+		}
+	}, {
+		name: "DEEPGRAM_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "DEEPGRAM_PASSWORD"
+		}
 	}]
+	extraSecrets: []
+
 	ingress: {
 		annotations: {
 			"cert-manager.io/cluster-issuer":               "letsencrypt-prod"
