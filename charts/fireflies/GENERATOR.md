@@ -51,6 +51,58 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | GOOGLE_SECRET | autojoin-worker | |
 | OUTLOOK_CLIENT_ID | autojoin-worker | |
 | OUTLOOK_SECRET | autojoin-worker | |
+| GMAIL_STMP_PASS | bot-fireflies | |
+| GMAIL_STMP_USER | bot-fireflies | |
+| ADMIN_MEETING_NOTE_EDIT | bot-fireflies | |
+| AIRTABLE_ACCESS_KEY | bot-fireflies | |
+| AIRTABLE_URL_CRYPT| bot-fireflies | |
+| API_AI_CLIENT | bot-fireflies | |
+| API_AI_SECRET | bot-fireflies | |
+| APOLLO_API_KEY | bot-fireflies | |
+| AUDIO_FF_AUTH | bot-fireflies | |
+| AUDIO_WORKER_TOKEN | bot-fireflies | |
+| AUTOPILOT_KEY| bot-fireflies | |
+| AWS_ACCESS_KEY_ID | bot-fireflies | |
+| AWS_SECRET_ACCESS_KEY | bot-fireflies | |
+| CHROME_BASIC_FILTER_TOKEN| bot-fireflies | |
+| DELETE_ADMIN_TOKEN | bot-fireflies | |
+| DEV_SLACK_CLIENT_SECRET | bot-fireflies | |
+| ELASTIC_SEARCH_AUTH | bot-fireflies | |
+| FF_SLACK_DEV_TOKEN | bot-fireflies | |
+| FF_SLACK_TOKEN | bot-fireflies | |
+| FF_VERIFY_SEND_EMAIL | bot-fireflies | |
+| GQL_ACCESS_TOKEN | bot-fireflies | |
+| GQL_AUTH | bot-fireflies | |
+| HUBSPOT_API_KEY| bot-fireflies | |
+| NIGHTMARE_TOKEN | bot-fireflies | |
+| NJWT_ACCESS_TOKEN | bot-fireflies | |
+| NJWT_REFRESH_TOKEN | bot-fireflies | |
+| NOW_TOKEN | bot-fireflies | |
+| OAUTH_CLIENT_ID | bot-fireflies | |
+| OAUTH_CLIENT_SECRET | bot-fireflies | |
+| OFFICE_CLIENT_ID | bot-fireflies | |
+| PAPERSPACE_API_KEY | bot-fireflies | |
+| PARSE_PASSWORD | bot-fireflies | |
+| PARTCIPANT_DISPATCH_AUTH | bot-fireflies | |
+| PAYMENTS_FF_AUTH_USERNAME | bot-fireflies | |
+| PAYMENTS_FF_AUTH_PASSWORD | bot-fireflies | |
+| PROD_SLACK_CLIENT_SECRET | bot-fireflies | |
+| SEGMENT_WRITE_KEY | bot-fireflies | |
+| SENDGRID_API_KEY | bot-fireflies | |
+| SLACK_BOT_TOKEN | bot-fireflies | |
+| SLACK_SIGNING_SECRET | bot-fireflies | |
+| SLACK_USER_TOKEN | bot-fireflies | |
+| SLACK_VERIFICATION_TOKEN | bot-fireflies | |
+| TWILIO_ACCOUNT_SID | bot-fireflies | |
+| TWILIO_AUTH_TOKEN | bot-fireflies | |
+| WATSON_STT_PASS | bot-fireflies | |
+| WATSON_STT_USERNAME | bot-fireflies | |
+| WINSTON_TOKEN | bot-fireflies | |
+| GOOGLE_CLIENT_ID | bot-fireflies | |
+| GOOGLE_SECRET | bot-fireflies | |
+| OUTLOOK_CLIENT_ID | bot-fireflies | |
+| OUTLOOK_SECRET | bot-fireflies | |
+| OFFICE_CLIENT_SECRET | bot-fireflies | |
 
 
 # Example

@@ -263,167 +263,320 @@ package fireflies
 	}, {
 		name:  "USER_EVENT_QUEUE_BOT_FF_SUBSCRIPTION"
 		value: "user-service-staging-bot-ff-sub"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "GMAIL_STMP_PASS"
-		key:  "GMAIL_STMP_PASS"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GMAIL_STMP_PASS"
+		}
 	}, {
 		name: "GMAIL_STMP_USER"
-		key:  "GMAIL_STMP_USER"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GMAIL_STMP_USER"
+		}
 	}, {
 		name: "ADMIN_MEETING_NOTE_EDIT"
-		key:  "ADMIN_MEETING_NOTE_EDIT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ADMIN_MEETING_NOTE_EDIT"
+		}
 	}, {
 		name: "AIRTABLE_ACCESS_KEY"
-		key:  "AIRTABLE_ACCESS_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AIRTABLE_ACCESS_KEY"
+		}
 	}, {
 		name: "AIRTABLE_URL_CRYPT"
-		key:  "AIRTABLE_URL_CRYPT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AIRTABLE_URL_CRYPT"
+		}
 	}, {
 		name: "API_AI_CLIENT"
-		key:  "API_AI_CLIENT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "API_AI_CLIENT"
+		}
 	}, {
 		name: "API_AI_SECRET"
-		key:  "API_AI_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "API_AI_SECRET"
+		}
 	}, {
 		name: "APOLLO_API_KEY"
-		key:  "APOLLO_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "APOLLO_API_KEY"
+		}
 	}, {
 		name: "AUDIO_FF_AUTH"
-		key:  "AUDIO_FF_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AUDIO_FF_AUTH"
+		}
 	}, {
 		name: "AUDIO_WORKER_TOKEN"
-		key:  "AUDIO_WORKER_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AUDIO_WORKER_TOKEN"
+		}
 	}, {
 		name: "AUTOPILOT_KEY"
-		key:  "AUTOPILOT_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AUTOPILOT_KEY"
+		}
 	}, {
 		name: "AWS_ACCESS_KEY_ID"
-		key:  "AWS_ACCESS_KEY_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AWS_ACCESS_KEY_ID"
+		}
 	}, {
 		name: "AWS_SECRET_ACCESS_KEY"
-		key:  "AWS_SECRET_ACCESS_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AWS_SECRET_ACCESS_KEY"
+		}
 	}, {
 		name: "CHROME_BASIC_FILTER_TOKEN"
-		key:  "CHROME_BASIC_FILTER_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "CHROME_BASIC_FILTER_TOKEN"
+		}
 	}, {
 		name: "DELETE_ADMIN_TOKEN"
-		key:  "DELETE_ADMIN_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "DELETE_ADMIN_TOKEN"
+		}
 	}, {
 		name: "DEV_SLACK_CLIENT_SECRET"
-		key:  "DEV_SLACK_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "DEV_SLACK_CLIENT_SECRET"
+		}
 	}, {
 		name: "ELASTIC_SEARCH_AUTH"
-		key:  "ELASTIC_SEARCH_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ELASTIC_SEARCH_AUTH"
+		}
 	}, {
 		name: "FF_SLACK_DEV_TOKEN"
-		key:  "FF_SLACK_DEV_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "FF_SLACK_DEV_TOKEN"
+		}
 	}, {
 		name: "FF_SLACK_TOKEN"
-		key:  "FF_SLACK_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "FF_SLACK_TOKEN"
+		}
 	}, {
 		name: "FF_VERIFY_SEND_EMAIL"
-		key:  "FF_VERIFY_SEND_EMAIL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "FF_VERIFY_SEND_EMAIL"
+		}
 	}, {
 		name: "GQL_ACCESS_TOKEN"
-		key:  "GQL_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_ACCESS_TOKEN"
+		}
 	}, {
 		name: "GQL_AUTH"
-		key:  "GQL_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_AUTH"
+		}
 	}, {
 		name: "HUBSPOT_API_KEY"
-		key:  "HUBSPOT_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "HUBSPOT_API_KEY"
+		}
 	}, {
 		name: "NIGHTMARE_TOKEN"
-		key:  "NIGHTMARE_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "NIGHTMARE_TOKEN"
+		}
 	}, {
 		name: "NJWT_ACCESS_TOKEN"
-		key:  "NJWT_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "NJWT_ACCESS_TOKEN"
+		}
 	}, {
 		name: "NJWT_REFRESH_TOKEN"
-		key:  "NJWT_REFRESH_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "NJWT_REFRESH_TOKEN"
+		}
 	}, {
 		name: "NOW_TOKEN"
-		key:  "NOW_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "NOW_TOKEN"
+		}
 	}, {
 		name: "OAUTH_CLIENT_ID"
-		key:  "OAUTH_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_ID"
+		}
 	}, {
 		name: "OAUTH_CLIENT_SECRET"
-		key:  "OAUTH_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_SECRET"
+		}
 	}, {
 		name: "OFFICE_CLIENT_ID"
-		key:  "OFFICE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_ID"
+		}
 	}, {
 		name: "PAPERSPACE_API_KEY"
-		key:  "PAPERSPACE_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PAPERSPACE_API_KEY"
+		}
 	}, {
 		name: "PARSE_PASSWORD"
-		key:  "PARSE_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PARSE_PASSWORD"
+		}
 	}, {
 		name: "PARTCIPANT_DISPATCH_AUTH"
-		key:  "PARTCIPANT_DISPATCH_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PARTCIPANT_DISPATCH_AUTH"
+		}
 	}, {
 		name: "PAYMENTS_FF_AUTH_USERNAME"
-		key:  "PAYMENTS_FF_AUTH_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PAYMENTS_FF_AUTH_USERNAME"
+		}
 	}, {
 		name: "PAYMENTS_FF_AUTH_PASSWORD"
-		key:  "PAYMENTS_FF_AUTH_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PAYMENTS_FF_AUTH_PASSWORD"
+		}
 	}, {
 		name: "PROD_SLACK_CLIENT_SECRET"
-		key:  "PROD_SLACK_CLIENT_SECRET"
-	}, {
-		name: "RABBIT_MQ_URL"
-		key:  "RABBIT_MQ_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PROD_SLACK_CLIENT_SECRET"
+		}
 	}, {
 		name: "SEGMENT_WRITE_KEY"
-		key:  "SEGMENT_WRITE_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SEGMENT_WRITE_KEY"
+		}
 	}, {
 		name: "SENDGRID_API_KEY"
-		key:  "SENDGRID_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SENDGRID_API_KEY"
+		}
 	}, {
 		name: "SLACK_BOT_TOKEN"
-		key:  "SLACK_BOT_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SLACK_BOT_TOKEN"
+		}
 	}, {
 		name: "SLACK_SIGNING_SECRET"
-		key:  "SLACK_SIGNING_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SLACK_SIGNING_SECRET"
+		}
 	}, {
 		name: "SLACK_USER_TOKEN"
-		key:  "SLACK_USER_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SLACK_USER_TOKEN"
+		}
 	}, {
 		name: "SLACK_VERIFICATION_TOKEN"
-		key:  "SLACK_VERIFICATION_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SLACK_VERIFICATION_TOKEN"
+		}
 	}, {
 		name: "TWILIO_ACCOUNT_SID"
-		key:  "TWILIO_ACCOUNT_SID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TWILIO_ACCOUNT_SID"
+		}
 	}, {
 		name: "TWILIO_AUTH_TOKEN"
-		key:  "TWILIO_AUTH_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TWILIO_AUTH_TOKEN"
+		}
 	}, {
 		name: "WATSON_STT_PASS"
-		key:  "WATSON_STT_PASS"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "WATSON_STT_PASS"
+		}
 	}, {
 		name: "WATSON_STT_USERNAME"
-		key:  "WATSON_STT_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "WATSON_STT_USERNAME"
+		}
 	}, {
 		name: "WINSTON_TOKEN"
-		key:  "WINSTON_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "WINSTON_TOKEN"
+		}
 	}, {
 		name: "GOOGLE_CLIENT_ID"
-		key:  "GOOGLE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_CLIENT_ID"
+		}
 	}, {
 		name: "GOOGLE_SECRET"
-		key:  "GOOGLE_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_SECRET"
+		}
 	}, {
 		name: "OUTLOOK_CLIENT_ID"
-		key:  "OUTLOOK_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_CLIENT_ID"
+		}
 	}, {
 		name: "OUTLOOK_SECRET"
-		key:  "OUTLOOK_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_SECRET"
+		}
 	}, {
 		name: "OFFICE_CLIENT_SECRET"
-		key:  "OFFICE_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_SECRET"
+		}
 	}]
+	extraSecrets: []
 	ingress: {
 		enabled:   true
 		className: "nginx"
