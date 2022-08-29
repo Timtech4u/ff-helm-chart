@@ -19,21 +19,21 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | SLACK_BOT_IMAGE | audio | |
 | API_FF_TOKEN | audio | Seems like we just need to automatically generate this? |
 | WORD_CAB_API_KEY | audio | |
-| K8S_PUPPET_DISPATCH_STRING | audio, bridge | Seems like we just need to automatically generate this? |
+| K8S_PUPPET_DISPATCH_STRING | audio, bridge, call-join | Seems like we just need to automatically generate this? |
 | SEGMENT_WRITE_KEY | audio, apollo, autojoin-worker | |
-| GROWTHBOOK_API_KEY | audio | |
-| GQL_ACCESS_TOKEN | apollo, autojoin-worker, calendar, bot-fireflies, calendar-watch | |
-| SERVER_IP | apollo | |
-| SERVER_PORT | apollo | |
+| GROWTHBOOK_API_KEY | audio, call-join | |
+| GQL_ACCESS_TOKEN | apollo, autojoin-worker, calendar, bot-fireflies, calendar-watch, call-join | |
+| SERVER_IP | apollo, call-join | |
+| SERVER_PORT | apollo, call-join | |
 | WINSTON_TOKEN | apollo | |
 | WINSTON_SUBDOMAIN | apollo | |
-| OAUTH_CLIENT_ID | apollo, autojoin-worker, bot-fireflies, calendar, calendar-watch | |
-| OAUTH_CLIENT_SECRET | apollo, autojoin-worker, bot-fireflies, calendar, calendar-watch | |
+| OAUTH_CLIENT_ID | apollo, autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
+| OAUTH_CLIENT_SECRET | apollo, autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
 | RABBIT_MQ_URL | apollo | |
 | AUTO_JOIN_WORKER_QUEUE | apollo | |
 | GCLOUD_PROJECT | apollo | |
 | TWILIO_ACCOUNT_SID | apollo, autojoin-worker  | |
-| TWILIO_AUTH_TOKEN | apollo, autojoin-worker | |
+| TWILIO_AUTH_TOKEN | apollo, autojoin-worker, bot-fireflies, call-join | |
 | TZ | apollo | |
 | CALL_JOIN_URL | apollo | |
 | CJ_URL | apollo | |
@@ -44,13 +44,13 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | OVERWRITE_CHANNEL_ID | autojoin-worker | |
 | REPORT_CHANNEL_ID | autojoin-worker | |
 | SLACK_CHANNEL_ID | autojoin-worker | |
-| OFFICE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch | |
-| OFFICE_CLIENT_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch | |
+| OFFICE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
+| OFFICE_CLIENT_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
 | QUEUE_PREFIX | autojoin-worker | |
-| GOOGLE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch | |
-| GOOGLE_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch | |
-| OUTLOOK_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch | |
-| OUTLOOK_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch | |
+| GOOGLE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
+| GOOGLE_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
+| OUTLOOK_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
+| OUTLOOK_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
 | GMAIL_STMP_PASS | bot-fireflies | |
 | GMAIL_STMP_USER | bot-fireflies | |
 | ADMIN_MEETING_NOTE_EDIT | bot-fireflies | |
@@ -67,7 +67,7 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | CHROME_BASIC_FILTER_TOKEN| bot-fireflies | |
 | DELETE_ADMIN_TOKEN | bot-fireflies | |
 | DEV_SLACK_CLIENT_SECRET | bot-fireflies | |
-| ELASTIC_SEARCH_AUTH | bot-fireflies | |
+| ELASTIC_SEARCH_AUTH | bot-fireflies, call-join | |
 | FF_SLACK_DEV_TOKEN | bot-fireflies | |
 | FF_SLACK_TOKEN | bot-fireflies | |
 | FF_VERIFY_SEND_EMAIL | bot-fireflies | |
@@ -83,25 +83,32 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | PAYMENTS_FF_AUTH_USERNAME | bot-fireflies | |
 | PAYMENTS_FF_AUTH_PASSWORD | bot-fireflies | |
 | PROD_SLACK_CLIENT_SECRET | bot-fireflies | |
-| SEGMENT_WRITE_KEY | bot-fireflies, calendar | |
+| SEGMENT_WRITE_KEY | bot-fireflies, calendar, call-join | |
 | SENDGRID_API_KEY | bot-fireflies | |
 | SLACK_BOT_TOKEN | bot-fireflies | |
 | SLACK_SIGNING_SECRET | bot-fireflies | |
 | SLACK_USER_TOKEN | bot-fireflies | |
 | SLACK_VERIFICATION_TOKEN | bot-fireflies | |
-| TWILIO_ACCOUNT_SID | bot-fireflies | |
-| TWILIO_AUTH_TOKEN | bot-fireflies | |
+| TWILIO_ACCOUNT_SID | bot-fireflies, call-join | |
 | WATSON_STT_PASS | bot-fireflies | |
 | WATSON_STT_USERNAME | bot-fireflies | |
 | WINSTON_TOKEN | bot-fireflies | |
 | SENTRY_DSN_URL | bridge, calendar, calendar-watch | |
-| AUDIO_SERVICE_TOKEN | bridge | |
+| AUDIO_SERVICE_TOKEN | bridge, call-join | |
 | BUCKET | bridge | |
-| BASIC_AUTH_USERNAME | calendar, calendar-watch | |
-| BASIC_AUTH_PASSWORD | calendar, calendar-watch | |
+| BASIC_AUTH_USERNAME | calendar, calendar-watch, call-join | |
+| BASIC_AUTH_PASSWORD | calendar, calendar-watch, call-join | |
 | OUTLOOK_TENANT | calendar, calendar-watch | |
-| USE_NOTES_MONGO_DB_NAME | calendar-watch | |
-
+| USE_NOTES_MONGO_DB_NAME | calendar-watch, call-join | |
+| PUPPET_PROXY_USERNAME | call-join | |
+| PUPPET_PROXY_PASSWORD | call-join | |
+| PUPPET_PROXY_SERVER | call-join | |
+| PUPPET_V2_AWS_SECRET_ACCESS_KEY | call-join | |
+| PUPPET_V2_AWS_ACCESS_KEY_ID | call-join | |
+| PUPPET_V2_ANTICAPTCHA_API_KEY | call-join | |
+| PUPPET_V2_CAPTCHA_API_KEY | call-join | |
+| PUPPET_MEETING_QUEUE | call-join | |
+| OAUTH_SECRET | call-join | |
 
 # Example
 

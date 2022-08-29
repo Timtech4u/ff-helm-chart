@@ -199,104 +199,188 @@ package fireflies
 	}, {
 		name:  "PUPPET_IMAGE"
 		value: "ghcr.io/firefliesai/puppet-runner/puppet-runner:6c96905f"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "K8S_PUPPET_DISPATCH_STRING"
-		key:  "K8S_PUPPET_DISPATCH_STRING"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "K8S_PUPPET_DISPATCH_STRING"
+		}
 	}, {
 		name: "BASIC_AUTH_PASSWORD"
-		key:  "BASIC_AUTH_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "BASIC_AUTH_PASSWORD"
+		}
 	}, {
 		name: "BASIC_AUTH_USER"
-		key:  "BASIC_AUTH_USER"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "BASIC_AUTH_USER"
+		}
 	}, {
 		name: "ELASTIC_SEARCH_AUTH"
-		key:  "ELASTIC_SEARCH_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ELASTIC_SEARCH_AUTH"
+		}
 	}, {
 		name: "GOOGLE_CLIENT_ID"
-		key:  "GOOGLE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_CLIENT_ID"
+		}
 	}, {
 		name: "GOOGLE_SECRET"
-		key:  "GOOGLE_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_SECRET"
+		}
 	}, {
 		name: "GQL_ACCESS_TOKEN"
-		key:  "GQL_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_ACCESS_TOKEN"
+		}
 	}, {
 		name: "MONGO_DB_NAME"
-		key:  "MONGO_DB_NAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "MONGO_DB_NAME"
+		}
 	}, {
 		name: "OAUTH_CLIENT_ID"
-		key:  "OAUTH_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_ID"
+		}
 	}, {
 		name: "OAUTH_CLIENT_SECRET"
-		key:  "OAUTH_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_SECRET"
+		}
 	}, {
 		name: "OAUTH_SECRET"
-		key:  "OAUTH_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_SECRET"
+		}
 	}, {
 		name: "OUTLOOK_CLIENT_ID"
-		key:  "OUTLOOK_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_CLIENT_ID"
+		}
 	}, {
 		name: "OUTLOOK_SECRET"
-		key:  "OUTLOOK_SECRET"
-	}, {
-		name: "RABBIT_MQ_URL"
-		key:  "RABBIT_MQ_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_SECRET"
+		}
 	}, {
 		name: "SEGMENT_WRITE_KEY"
-		key:  "SEGMENT_WRITE_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SEGMENT_WRITE_KEY"
+		}
 	}, {
 		name: "SERVER_IP"
-		key:  "SERVER_IP"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SERVER_IP"
+		}
 	}, {
 		name: "SERVER_PORT"
-		key:  "SERVER_PORT"
-	}, {
-		name: "RABBIT_MQ_KEY"
-		key:  "RABBIT_MQ_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SERVER_PORT"
+		}
 	}, {
 		name: "TWILIO_ACCOUNT_SID"
-		key:  "TWILIO_ACCOUNT_SID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TWILIO_ACCOUNT_SID"
+		}
 	}, {
 		name: "TWILIO_AUTH_TOKEN"
-		key:  "TWILIO_AUTH_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TWILIO_AUTH_TOKEN"
+		}
 	}, {
 		name: "PUPPET_MEETING_QUEUE"
-		key:  "PUPPET_MEETING_QUEUE"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PUPPET_MEETING_QUEUE"
+		}
 	}, {
 		name: "PUPPET_V2_CAPTCHA_API_KEY"
-		key:  "PUPPET_V2_CAPTCHA_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PUPPET_V2_CAPTCHA_API_KEY"
+		}
 	}, {
 		name: "PUPPET_V2_ANTICAPTCHA_API_KEY"
-		key:  "PUPPET_V2_ANTICAPTCHA_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PUPPET_V2_ANTICAPTCHA_API_KEY"
+		}
 	}, {
 		name: "PUPPET_V2_AWS_ACCESS_KEY_ID"
-		key:  "PUPPET_V2_AWS_ACCESS_KEY_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PUPPET_V2_AWS_ACCESS_KEY_ID"
+		}
 	}, {
 		name: "PUPPET_V2_AWS_SECRET_ACCESS_KEY"
-		key:  "PUPPET_V2_AWS_SECRET_ACCESS_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PUPPET_V2_AWS_SECRET_ACCESS_KEY"
+		}
 	}, {
 		name: "AUDIO_SERVICE_TOKEN"
-		key:  "AUDIO_SERVICE_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AUDIO_SERVICE_TOKEN"
+		}
 	}, {
 		name: "PUPPET_PROXY_SERVER"
-		key:  "PUPPET_PROXY_SERVER"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PUPPET_PROXY_SERVER"
+		}
 	}, {
 		name: "PUPPET_PROXY_PASSWORD"
-		key:  "PUPPET_PROXY_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PUPPET_PROXY_PASSWORD"
+		}
 	}, {
 		name: "PUPPET_PROXY_USERNAME"
-		key:  "PUPPET_PROXY_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PUPPET_PROXY_USERNAME"
+		}
 	}, {
 		name: "OFFICE_CLIENT_ID"
-		key:  "OFFICE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_ID"
+		}
 	}, {
 		name: "OFFICE_CLIENT_SECRET"
-		key:  "OFFICE_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_SECRET"
+		}
 	}, {
 		name: "GROWTHBOOK_API_KEY"
-		key:  "GROWTHBOOK_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GROWTHBOOK_API_KEY"
+		}
 	}]
+	extraSecrets: []
 	terminationGracePeriodSeconds: 80
 	ingress: {
 		enabled:   false
