@@ -80,17 +80,26 @@ download: {
 	}, {
 		name:  "AWS_BUCKET_ID"
 		value: "ff-private-download"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "AWS_SECRET"
-		key:  "AWS_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AWS_SECRET"
+		}
 	}, {
 		name: "AWS_KEY"
-		key:  "AWS_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AWS_KEY"
+		}
 	}, {
 		name: "SENTRY_DSN_URL"
-		key:  "SENTRY_DSN_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SENTRY_DSN_URL"
+		}
 	}]
+	extraSecrets: []
 	ingress: {
 		enabled:   true
 		className: "nginx"

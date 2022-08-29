@@ -159,89 +159,170 @@ dashboard: {
 	}, {
 		name:  "GOOGLE_PROJECT_ID"
 		value: "ff-private-cloud"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "ADMIN_MEETING_NOTE_EDIT"
-		key:  "ADMIN_MEETING_NOTE_EDIT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "K8S_PUPPET_DISPATCH_STRING"
+		}
 	}, {
 		name: "APOLLO_KEY"
-		key:  "APOLLO_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "APOLLO_KEY"
+		}
 	}, {
 		name: "AUDIO_WORKER_AUTH"
-		key:  "AUDIO_WORKER_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AUDIO_WORKER_AUTH"
+		}
 	}, {
 		name: "CDN_URL"
-		key:  "CDN_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "CDN_URL"
+		}
 	}, {
 		name: "ELASTIC_SEARCH_AUTH"
-		key:  "ELASTIC_SEARCH_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ELASTIC_SEARCH_AUTH"
+		}
 	}, {
 		name: "GOOGLE_CLIENT_ID"
-		key:  "GOOGLE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_CLIENT_ID"
+		}
 	}, {
 		name: "GQL_ACCESS_TOKEN"
-		key:  "GQL_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_ACCESS_TOKEN"
+		}
 	}, {
 		name: "IMPERSONATE_ADMIN_KEY"
-		key:  "IMPERSONATE_ADMIN_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "IMPERSONATE_ADMIN_KEY"
+		}
 	}, {
 		name: "PAYMENTS_FF_PASSWORD"
-		key:  "PAYMENTS_FF_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PAYMENTS_FF_PASSWORD"
+		}
 	}, {
 		name: "REACT_APP_SENTRY_DNS_SERVER"
-		key:  "REACT_APP_SENTRY_DNS_SERVER"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "REACT_APP_SENTRY_DNS_SERVER"
+		}
 	}, {
 		name: "REACT_APP_STRIPE_PUBLIC_KEY"
-		key:  "REACT_APP_STRIPE_PUBLIC_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "REACT_APP_STRIPE_PUBLIC_KEY"
+		}
 	}, {
 		name: "S3_USE_NOTES_ACCESS"
-		key:  "S3_USE_NOTES_ACCESS"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "S3_USE_NOTES_ACCESS"
+		}
 	}, {
 		name: "SENDGRID_API_KEY"
-		key:  "SENDGRID_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SENDGRID_API_KEY"
+		}
 	}, {
 		name: "SENTRY_DSN_SERVER"
-		key:  "SENTRY_DSN_SERVER"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SENTRY_DSN_SERVER"
+		}
 	}, {
 		name: "STRIPE_SECRET_KEY"
-		key:  "STRIPE_SECRET_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "STRIPE_SECRET_KEY"
+		}
 	}, {
 		name: "ZAPIER_INVITE"
-		key:  "ZAPIER_INVITE"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ZAPIER_INVITE"
+		}
 	}, {
 		name: "ZENDESK_VISITOR_AUTH"
-		key:  "ZENDESK_VISITOR_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ZENDESK_VISITOR_AUTH"
+		}
 	}, {
 		name: "JWT_SECRET_KEY"
-		key:  "JWT_SECRET_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "JWT_SECRET_KEY"
+		}
 	}, {
 		name: "SEGMENT_WRITE_KEY"
-		key:  "SEGMENT_WRITE_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SEGMENT_WRITE_KEY"
+		}
 	}, {
 		name: "AZURE_CLIENT_ID"
-		key:  "AZURE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AZURE_CLIENT_ID"
+		}
 	}, {
 		name: "OFFICE_CLIENT_ID"
-		key:  "OFFICE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_ID"
+		}
 	}, {
 		name: "OFFICE_CLIENT_SECRET"
-		key:  "OFFICE_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_SECRET"
+		}
 	}, {
 		name: "ANALYTICS_PASSWORD"
-		key:  "ANALYTICS_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ANALYTICS_PASSWORD"
+		}
 	}, {
 		name: "GOOGLE_SECRET"
-		key:  "GOOGLE_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_SECRET"
+		}
 	}, {
 		name: "KEY_PAIR_ID"
-		key:  "KEY_PAIR_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "KEY_PAIR_ID"
+		}
 	}, {
 		name: "PRIVATE_KEY_STRING"
-		key:  "PRIVATE_KEY_STRING"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PRIVATE_KEY_STRING"
+		}
 	}, {
 		name: "PUBLIC_KEY_STRING"
-		key:  "PUBLIC_KEY_STRING"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PUBLIC_KEY_STRING"
+		}
 	}]
+	extraSecrets: []
 	ingress: {
 		enabled:   true
 		className: "nginx"

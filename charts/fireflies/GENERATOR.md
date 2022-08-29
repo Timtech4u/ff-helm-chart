@@ -5,12 +5,12 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | Key | Services | Remarks |
 | --- | -------- | ------- |
 | REV_TOKEN | audio | |
-| SENDGRID_API_KEY | audio | |
+| SENDGRID_API_KEY | audio, bot-fireflies, dashboard | |
 | GQL_AUTH | audio | Seems like we just need to automatically generate this? |
 | CRON_SERVICE_TOKEN | audio | Seems like we just need to automatically generate this? |
 | AWS_ACCESS_KEY_ID | audio | |
 | AWS_SECRET_ACCESS_KEY | audio | |
-| ELASTIC_SEARCH_AUTH | audio | Could be optional if the user asks to automatically deploy it alongside with the Fireflies helm chart |
+| ELASTIC_SEARCH_AUTH | audio, bot-fireflies, call-join, dashboard | Could be optional if the user asks to automatically deploy it alongside with the Fireflies helm chart |
 | WORKFLOW_SERVICE_AUTH | audio | Seems like we just need to automatically generate this? |
 | ASSEMBLY_TOKEN | audio | |
 | API_KEY | audio | Seems like we just need to automatically generate this? |
@@ -20,9 +20,9 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | API_FF_TOKEN | audio | Seems like we just need to automatically generate this? |
 | WORD_CAB_API_KEY | audio | |
 | K8S_PUPPET_DISPATCH_STRING | audio, bridge, call-join | Seems like we just need to automatically generate this? |
-| SEGMENT_WRITE_KEY | audio, apollo, autojoin-worker | |
+| SEGMENT_WRITE_KEY | audio, apollo, autojoin-worker, bot-fireflies, calendar, call-join, dashboard | |
 | GROWTHBOOK_API_KEY | audio, call-join | |
-| GQL_ACCESS_TOKEN | apollo, autojoin-worker, calendar, bot-fireflies, calendar-watch, call-join | |
+| GQL_ACCESS_TOKEN | apollo, autojoin-worker, calendar, bot-fireflies, calendar-watch, call-join, dashboard | |
 | SERVER_IP | apollo, call-join | |
 | SERVER_PORT | apollo, call-join | |
 | WINSTON_TOKEN | apollo | |
@@ -44,16 +44,16 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | OVERWRITE_CHANNEL_ID | autojoin-worker | |
 | REPORT_CHANNEL_ID | autojoin-worker | |
 | SLACK_CHANNEL_ID | autojoin-worker | |
-| OFFICE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
-| OFFICE_CLIENT_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
+| OFFICE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join, dashboard | |
+| OFFICE_CLIENT_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join, dashboard | |
 | QUEUE_PREFIX | autojoin-worker | |
-| GOOGLE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
-| GOOGLE_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
+| GOOGLE_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join, dashboard | |
+| GOOGLE_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join, dashboard | |
 | OUTLOOK_CLIENT_ID | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
 | OUTLOOK_SECRET | autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |
 | GMAIL_STMP_PASS | bot-fireflies | |
 | GMAIL_STMP_USER | bot-fireflies | |
-| ADMIN_MEETING_NOTE_EDIT | bot-fireflies | |
+| ADMIN_MEETING_NOTE_EDIT | bot-fireflies, dashboard | |
 | AIRTABLE_ACCESS_KEY | bot-fireflies | |
 | AIRTABLE_URL_CRYPT| bot-fireflies | |
 | API_AI_CLIENT | bot-fireflies | |
@@ -67,7 +67,6 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | CHROME_BASIC_FILTER_TOKEN| bot-fireflies | |
 | DELETE_ADMIN_TOKEN | bot-fireflies | |
 | DEV_SLACK_CLIENT_SECRET | bot-fireflies | |
-| ELASTIC_SEARCH_AUTH | bot-fireflies, call-join | |
 | FF_SLACK_DEV_TOKEN | bot-fireflies | |
 | FF_SLACK_TOKEN | bot-fireflies | |
 | FF_VERIFY_SEND_EMAIL | bot-fireflies | |
@@ -83,8 +82,6 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | PAYMENTS_FF_AUTH_USERNAME | bot-fireflies | |
 | PAYMENTS_FF_AUTH_PASSWORD | bot-fireflies | |
 | PROD_SLACK_CLIENT_SECRET | bot-fireflies | |
-| SEGMENT_WRITE_KEY | bot-fireflies, calendar, call-join | |
-| SENDGRID_API_KEY | bot-fireflies | |
 | SLACK_BOT_TOKEN | bot-fireflies | |
 | SLACK_SIGNING_SECRET | bot-fireflies | |
 | SLACK_USER_TOKEN | bot-fireflies | |
@@ -93,7 +90,7 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | WATSON_STT_PASS | bot-fireflies | |
 | WATSON_STT_USERNAME | bot-fireflies | |
 | WINSTON_TOKEN | bot-fireflies | |
-| SENTRY_DSN_URL | bridge, calendar, calendar-watch | |
+| SENTRY_DSN_URL | bridge, calendar, calendar-watch, download | |
 | AUDIO_SERVICE_TOKEN | bridge, call-join | |
 | BUCKET | bridge | |
 | BASIC_AUTH_USERNAME | calendar, calendar-watch, call-join | |
@@ -109,6 +106,26 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | PUPPET_V2_CAPTCHA_API_KEY | call-join | |
 | PUPPET_MEETING_QUEUE | call-join | |
 | OAUTH_SECRET | call-join | |
+| PUBLIC_KEY_STRING | dashboard | |
+| PRIVATE_KEY_STRING | dashboard | |
+| KEY_PAIR_ID | dashboard | |
+| ANALYTICS_PASSWORD | dashboard | |
+| AZURE_CLIENT_ID | dashboard | |
+| JWT_SECRET_KEY | dashboard | |
+| ZENDESK_VISITOR_AUTH | dashboard | |
+| ZAPIER_INVITE | dashboard | |
+| STRIPE_SECRET_KEY | dashboard | |
+| SENTRY_DSN_SERVER | dashboard | |
+| S3_USE_NOTES_ACCESS | dashboard | |
+| REACT_APP_STRIPE_PUBLIC_KEY | dashboard | |
+| REACT_APP_SENTRY_DNS_SERVER | dashboard | |
+| PAYMENTS_FF_PASSWORD | dashboard | |
+| IMPERSONATE_ADMIN_KEY | dashboard | |
+| CDN_URL | dashboard | |
+| AUDIO_WORKER_AUTH | dashboard | |
+| APOLLO_KEY | dashboard | |
+| AWS_SECRET | download | |
+| AWS_KEY | download | |
 
 # Example
 
