@@ -85,53 +85,92 @@ package fireflies
 	}, {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "GQL_ACCESS_TOKEN"
-		key:  "GQL_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_ACCESS_TOKEN"
+		}
 	}, {
 		name: "OAUTH_CLIENT_ID"
-		key:  "OAUTH_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_ID"
+		}
 	}, {
 		name: "OAUTH_CLIENT_SECRET"
-		key:  "OAUTH_CLIENT_SECRET"
-	}, {
-		name: "RABBIT_MQ_URL"
-		key:  "RABBIT_MQ_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_SECRET"
+		}
 	}, {
 		name: "GOOGLE_CLIENT_ID"
-		key:  "GOOGLE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_CLIENT_ID"
+		}
 	}, {
 		name: "GOOGLE_SECRET"
-		key:  "GOOGLE_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_SECRET"
+		}
 	}, {
 		name: "SENTRY_DSN_URL"
-		key:  "SENTRY_DSN_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SENTRY_DSN_URL"
+		}
 	}, {
 		name: "BASIC_AUTH_USERNAME"
-		key:  "BASIC_AUTH_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "BASIC_AUTH_USERNAME"
+		}
 	}, {
 		name: "BASIC_AUTH_PASSWORD"
-		key:  "BASIC_AUTH_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "BASIC_AUTH_PASSWORD"
+		}
 	}, {
 		name: "OUTLOOK_CLIENT_ID"
-		key:  "OUTLOOK_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_CLIENT_ID"
+		}
 	}, {
-		name: "OUTLOOK_SECRED"
-		key:  "OUTLOOK_SECRED"
+		name: "OUTLOOK_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_SECRET"
+		}
 	}, {
 		name: "OUTLOOK_TENANT"
-		key:  "OUTLOOK_TENANT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_TENANT"
+		}
 	}, {
 		name: "OFFICE_CLIENT_ID"
-		key:  "OFFICE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_ID"
+		}
 	}, {
 		name: "OFFICE_CLIENT_SECRET"
-		key:  "OFFICE_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_SECRET"
+		}
 	}, {
 		name: "USE_NOTES_MONGO_DB_NAME"
-		key:  "USE_NOTES_MONGO_DB_NAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "USE_NOTES_MONGO_DB_NAME"
+		}
 	}]
+	extraSecrets: []
 	ingress: {
 		enabled:   false
 		className: "nginx"
