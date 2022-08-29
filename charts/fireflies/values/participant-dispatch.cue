@@ -112,29 +112,50 @@ package fireflies
 	}, {
 		name:  "REDIS_URL"
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "GQL_ACCESS_TOKEN"
-		key:  "GQL_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_ACCESS_TOKEN"
+		}
 	}, {
 		name: "SERVER_IP"
-		key:  "SERVER_IP"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SERVER_IP"
+		}
 	}, {
 		name: "PARTICIPANT_DISPATCH_AUTH"
-		key:  "PARTICIPANT_DISPATCH_AUTH"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "PARTICIPANT_DISPATCH_AUTHL"
+		}
 	}, {
 		name: "SENDGRID_API_KEY"
-		key:  "SENDGRID_API_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SENDGRID_API_KEY"
+		}
 	}, {
 		name: "NOW_TOKEN"
-		key:  "NOW_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "NOW_TOKEN"
+		}
 	}, {
 		name: "AWS_ACCESS_KEY_ID"
-		key:  "AWS_ACCESS_KEY_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AWS_ACCESS_KEY_ID"
+		}
 	}, {
 		name: "AWS_SECRET_ACCESS_KEY"
-		key:  "AWS_SECRET_ACCESS_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AWS_SECRET_ACCESS_KEY"
+		}
 	}]
+	extraSecrets: []
 	ingress: {
 		enabled:   false
 		className: "nginx"

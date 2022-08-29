@@ -5,11 +5,11 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | Key | Services | Remarks |
 | --- | -------- | ------- |
 | REV_TOKEN | audio | |
-| SENDGRID_API_KEY | audio, bot-fireflies, dashboard | |
+| SENDGRID_API_KEY | audio, bot-fireflies, dashboard, participant-dispatch | |
 | GQL_AUTH | audio | Seems like we just need to automatically generate this? |
 | CRON_SERVICE_TOKEN | audio | Seems like we just need to automatically generate this? |
-| AWS_ACCESS_KEY_ID | audio | |
-| AWS_SECRET_ACCESS_KEY | audio | |
+| AWS_ACCESS_KEY_ID | audio, participant-dispatch | |
+| AWS_SECRET_ACCESS_KEY | audio, participant-dispatch | |
 | ELASTIC_SEARCH_AUTH | audio, bot-fireflies, call-join, dashboard | Could be optional if the user asks to automatically deploy it alongside with the Fireflies helm chart |
 | WORKFLOW_SERVICE_AUTH | audio | Seems like we just need to automatically generate this? |
 | ASSEMBLY_TOKEN | audio | |
@@ -22,8 +22,8 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | K8S_PUPPET_DISPATCH_STRING | audio, bridge, call-join | Seems like we just need to automatically generate this? |
 | SEGMENT_WRITE_KEY | audio, apollo, autojoin-worker, bot-fireflies, calendar, call-join, dashboard | |
 | GROWTHBOOK_API_KEY | audio, call-join | |
-| GQL_ACCESS_TOKEN | apollo, autojoin-worker, calendar, bot-fireflies, calendar-watch, call-join, dashboard | |
-| SERVER_IP | apollo, call-join | |
+| GQL_ACCESS_TOKEN | apollo, autojoin-worker, calendar, bot-fireflies, calendar-watch, call-join, dashboard, participant-dispatch | |
+| SERVER_IP | apollo, call-join, participant-dispatch | |
 | SERVER_PORT | apollo, call-join | |
 | WINSTON_TOKEN | apollo | |
 | WINSTON_SUBDOMAIN | apollo | |
@@ -75,7 +75,7 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | NIGHTMARE_TOKEN | bot-fireflies | |
 | NJWT_ACCESS_TOKEN | bot-fireflies | |
 | NJWT_REFRESH_TOKEN | bot-fireflies | |
-| NOW_TOKEN | bot-fireflies | |
+| NOW_TOKEN | bot-fireflies, participant-dispatch | |
 | PAPERSPACE_API_KEY | bot-fireflies | |
 | PARSE_PASSWORD | bot-fireflies | |
 | PARTCIPANT_DISPATCH_AUTH | bot-fireflies | |
@@ -126,6 +126,7 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | APOLLO_KEY | dashboard | |
 | AWS_SECRET | download | |
 | AWS_KEY | download | |
+| PARTICIPANT_DISPATCH_AUTH | participant-dispatch | |
 
 # Example
 
