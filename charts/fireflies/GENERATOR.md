@@ -20,20 +20,20 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | API_FF_TOKEN | audio | Seems like we just need to automatically generate this? |
 | WORD_CAB_API_KEY | audio | |
 | K8S_PUPPET_DISPATCH_STRING | audio | Seems like we just need to automatically generate this? |
-| SEGMENT_WRITE_KEY | audio | |
+| SEGMENT_WRITE_KEY | audio, apollo, autojoin-worker | |
 | GROWTHBOOK_API_KEY | audio | |
-| GQL_ACCESS_TOKEN | apollo | |
+| GQL_ACCESS_TOKEN | apollo, autojoin-worker | |
 | SERVER_IP | apollo | |
 | SERVER_PORT | apollo | |
 | WINSTON_TOKEN | apollo | |
 | WINSTON_SUBDOMAIN | apollo | |
-| OAUTH_CLIENT_ID | apollo | |
-| OAUTH_CLIENT_SECRET | apollo | |
+| OAUTH_CLIENT_ID | apollo, autojoin-worker | |
+| OAUTH_CLIENT_SECRET | apollo, autojoin-worker | |
+| RABBIT_MQ_URL | apollo | |
 | AUTO_JOIN_WORKER_QUEUE | apollo | |
 | GCLOUD_PROJECT | apollo | |
-| TWILIO_ACCOUNT_SID | apollo | |
-| TWILIO_AUTH_TOKEN | apollo | |
-| SEGMENT_WRITE_KEY | apollo | |
+| TWILIO_ACCOUNT_SID | apollo, autojoin-worker  | |
+| TWILIO_AUTH_TOKEN | apollo, autojoin-worker | |
 | TZ | apollo | |
 | CALL_JOIN_URL | apollo | |
 | CJ_URL | apollo | |
@@ -41,6 +41,17 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | TRANSCODER_FF_URL | apollo | |
 | DEEPGRAM_USERNAME | apollo | |
 | DEEPGRAM_PASSWORD | apollo | |
+| OVERWRITE_CHANNEL_ID | autojoin-worker | |
+| REPORT_CHANNEL_ID | autojoin-worker | |
+| SLACK_CHANNEL_ID | autojoin-worker | |
+| OFFICE_CLIENT_ID | autojoin-worker | |
+| OFFICE_CLIENT_SECRET | autojoin-worker | |
+| QUEUE_PREFIX | autojoin-worker | |
+| GOOGLE_CLIENT_ID | autojoin-worker | |
+| GOOGLE_SECRET | autojoin-worker | |
+| OUTLOOK_CLIENT_ID | autojoin-worker | |
+| OUTLOOK_SECRET | autojoin-worker | |
+
 
 # Example
 

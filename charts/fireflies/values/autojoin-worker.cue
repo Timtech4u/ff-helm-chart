@@ -145,59 +145,104 @@ package fireflies
 	}, {
 		name:  "USER_RPC_CLIENT_SERVICE_NAME"
 		value: "autojoin-worker-ff"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "GQL_ACCESS_TOKEN"
-		key:  "GQL_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GQL_ACCESS_TOKEN"
+		}
 	}, {
 		name: "OAUTH_CLIENT_ID"
-		key:  "OAUTH_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_ID"
+		}
 	}, {
 		name: "OAUTH_CLIENT_SECRET"
-		key:  "OAUTH_CLIENT_SECRET"
-	}, {
-		name: "RABBIT_MQ_URL"
-		key:  "RABBIT_MQ_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OAUTH_CLIENT_SECRET"
+		}
 	}, {
 		name: "OVERWRITE_CHANNEL_ID"
-		key:  "OVERWRITE_CHANNEL_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OVERWRITE_CHANNEL_ID"
+		}
 	}, {
 		name: "REPORT_CHANNEL_ID"
-		key:  "REPORT_CHANNEL_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "REPORT_CHANNEL_ID"
+		}
 	}, {
 		name: "SLACK_CHANNEL_ID"
-		key:  "SLACK_CHANNEL_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SLACK_CHANNEL_ID"
+		}
 	}, {
 		name: "OFFICE_CLIENT_ID"
-		key:  "OFFICE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_ID"
+		}
 	}, {
 		name: "OFFICE_CLIENT_SECRET"
-		key:  "OFFICE_CLIENT_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT_SECRET"
+		}
 	}, {
 		name: "TWILIO_ACCOUNT_SID"
-		key:  "TWILIO_ACCOUNT_SID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TWILIO_ACCOUNT_SID"
+		}
 	}, {
 		name: "TWILIO_AUTH_TOKEN"
-		key:  "TWILIO_AUTH_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TWILIO_AUTH_TOKEN"
+		}
 	}, {
 		name: "SEGMENT_WRITE_KEY"
-		key:  "SEGMENT_WRITE_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SEGMENT_WRITE_KEY"
+		}
 	}, {
 		name: "QUEUE_PREFIX"
-		key:  "QUEUE_PREFIX"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "QUEUE_PREFIX"
+		}
 	}, {
 		name: "GOOGLE_CLIENT_ID"
-		key:  "GOOGLE_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_CLIENT_ID"
+		}
 	}, {
 		name: "GOOGLE_SECRET"
-		key:  "GOOGLE_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_SECRET"
+		}
 	}, {
 		name: "OUTLOOK_CLIENT_ID"
-		key:  "OUTLOOK_CLIENT_ID"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_CLIENT_ID"
+		}
 	}, {
 		name: "OUTLOOK_SECRET"
-		key:  "OUTLOOK_SECRET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OUTLOOK_SECRET"
+		}
 	}]
+	extraSecrets: []
 	terminationGracePeriodSeconds: 80
 	ingress: {
 		enabled:   false
