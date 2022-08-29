@@ -27,19 +27,7 @@ bridge: {
 		name:      "google-cloud-key"
 		mountPath: "/var/secrets/google"
 	}]
-	extraSecrets: [{
-		name: "K8S_PUPPET_DISPATCH_STRING"
-		key:  "K8S_PUPPET_DISPATCH_STRING"
-	}, {
-		name: "SENTRY_DSN_URL"
-		key:  "SENTRY_DSN_URL"
-	}, {
-		name: "AUDIO_SERVICE_TOKEN"
-		key:  "AUDIO_SERVICE_TOKEN"
-	}, {
-		name: "BUCKET"
-		key:  "BUCKET"
-	}]
+
 	extraEnv: [{
 		name:  "GOOGLE_PROJECT_ID"
 		value: _#config.googleProjectId
@@ -85,7 +73,32 @@ bridge: {
 	}, {
 		name:  "USER_SERVICE_GRPC_ENDPOINT"
 		value: "user-service.private.svc.cluster.local:50051"
+	}, {
+		name: "K8S_PUPPET_DISPATCH_STRING"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "K8S_PUPPET_DISPATCH_STRING"
+		}
+	}, {
+		name: "SENTRY_DSN_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SENTRY_DSN_URL"
+		}
+	}, {
+		name: "AUDIO_SERVICE_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "AUDIO_SERVICE_TOKEN"
+		}
+	}, {
+		name: "BUCKET"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "BUCKET"
+		}
 	}]
+	extraSecrets: []
 	ingress: {
 		enabled:   true
 		className: "nginx"

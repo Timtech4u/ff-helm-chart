@@ -19,7 +19,7 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | SLACK_BOT_IMAGE | audio | |
 | API_FF_TOKEN | audio | Seems like we just need to automatically generate this? |
 | WORD_CAB_API_KEY | audio | |
-| K8S_PUPPET_DISPATCH_STRING | audio | Seems like we just need to automatically generate this? |
+| K8S_PUPPET_DISPATCH_STRING | audio, bridge | Seems like we just need to automatically generate this? |
 | SEGMENT_WRITE_KEY | audio, apollo, autojoin-worker | |
 | GROWTHBOOK_API_KEY | audio | |
 | GQL_ACCESS_TOKEN | apollo, autojoin-worker | |
@@ -103,6 +103,9 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | OUTLOOK_CLIENT_ID | bot-fireflies | |
 | OUTLOOK_SECRET | bot-fireflies | |
 | OFFICE_CLIENT_SECRET | bot-fireflies | |
+| SENTRY_DSN_URL | bridge | |
+| AUDIO_SERVICE_TOKEN | bridge | |
+| BUCKET | bridge | |
 
 
 # Example
