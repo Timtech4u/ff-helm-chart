@@ -15,11 +15,11 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | ASSEMBLY_TOKEN | audio | |
 | API_KEY | audio | Seems like we just need to automatically generate this? |
 | OPEN_AI_API_KEY | audio | |
-| SLACK_ACCESS_TOKEN | audio | |
+| SLACK_ACCESS_TOKEN | audio, user-service | |
 | SLACK_BOT_IMAGE | audio | |
 | API_FF_TOKEN | audio | Seems like we just need to automatically generate this? |
 | WORD_CAB_API_KEY | audio | |
-| K8S_PUPPET_DISPATCH_STRING | audio, bridge, call-join | Seems like we just need to automatically generate this? |
+| K8S_PUPPET_DISPATCH_STRING | audio, bridge, call-join, queue | Seems like we just need to automatically generate this? |
 | SEGMENT_WRITE_KEY | audio, apollo, autojoin-worker, bot-fireflies, calendar, call-join, dashboard | |
 | GROWTHBOOK_API_KEY | audio, call-join | |
 | GQL_ACCESS_TOKEN | apollo, autojoin-worker, calendar, bot-fireflies, calendar-watch, call-join, dashboard, participant-dispatch | |
@@ -90,7 +90,7 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | WATSON_STT_PASS | bot-fireflies | |
 | WATSON_STT_USERNAME | bot-fireflies | |
 | WINSTON_TOKEN | bot-fireflies | |
-| SENTRY_DSN_URL | bridge, calendar, calendar-watch, download | |
+| SENTRY_DSN_URL | bridge, calendar, calendar-watch, download, user-service | |
 | AUDIO_SERVICE_TOKEN | bridge, call-join | |
 | BUCKET | bridge | |
 | BASIC_AUTH_USERNAME | calendar, calendar-watch, call-join | |
@@ -127,6 +127,15 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | AWS_SECRET | download | |
 | AWS_KEY | download | |
 | PARTICIPANT_DISPATCH_AUTH | participant-dispatch | |
+| ANALYTICS_SEGMENT_WRITE_KEY | user-service | |
+| USE_NOTES_MONGO_URI | user-service | |
+| USE_NOTES_MONGO_PASSWORD | user-service | |
+| USE_NOTES_MONGO_USERNAME | user-service | |
+| TOKEN_VERIFIER | user-service | |
+| OFFICE_S | user-service | |
+| OFFICE_CLIENT | user-service | |
+| GOOGLE_S | user-service | |
+| GOOGLE_CLIENT | user-service | |
 
 # Example
 

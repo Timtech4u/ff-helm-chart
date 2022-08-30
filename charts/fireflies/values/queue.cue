@@ -107,11 +107,14 @@ queue: {
 	}, {
 		name:  "SCHEDULER_JOB_REMOVE_ONCOMPLETE"
 		value: "true"
-	}]
-	extraSecrets: [{
+	}, {
 		name: "K8S_PUPPET_DISPATCH_STRING"
-		key:  "K8S_PUPPET_DISPATCH_STRING"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "K8S_PUPPET_DISPATCH_STRING"
+		}
 	}]
+	extraSecrets: []
 	autoscaling: {
 		enabled:                        false
 		minReplicas:                    3

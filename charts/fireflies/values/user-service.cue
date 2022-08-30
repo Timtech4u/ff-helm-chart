@@ -34,40 +34,6 @@ package fireflies
 		name:      "google-cloud-key"
 		mountPath: "/var/secrets/google"
 	}]
-	extraSecrets: [{
-		name: "GOOGLE_CLIENT"
-		key:  "GOOGLE_CLIENT"
-	}, {
-		name: "GOOGLE_S"
-		key:  "GOOGLE_S"
-	}, {
-		name: "OFFICE_CLIENT"
-		key:  "OFFICE_CLIENT"
-	}, {
-		name: "OFFICE_S"
-		key:  "OFFICE_S"
-	}, {
-		name: "TOKEN_VERIFIER"
-		key:  "TOKEN_VERIFIER"
-	}, {
-		name: "SLACK_ACCESS_TOKEN"
-		key:  "SLACK_ACCESS_TOKEN"
-	}, {
-		name: "DSN_URL"
-		key:  "DSN_URL"
-	}, {
-		name: "USE_NOTES_MONGO_USERNAME"
-		key:  "USE_NOTES_MONGO_USERNAME"
-	}, {
-		name: "USE_NOTES_MONGO_PASSWORD"
-		key:  "USE_NOTES_MONGO_PASSWORD"
-	}, {
-		name: "USE_NOTES_MONGO_URI"
-		key:  "USE_NOTES_MONGO_URI"
-	}, {
-		name: "ANALYTICS_SEGMENT_WRITE_KEY"
-		key:  "ANALYTICS_SEGMENT_WRITE_KEY"
-	}]
 	extraEnv: [{
 		name: "MONGO_USERNAME"
 		valueFrom: secretKeyRef: {
@@ -158,7 +124,74 @@ package fireflies
 	}, {
 		name: "NODE_ENV"
 		valueFrom: fieldRef: fieldPath: "metadata.namespace"
+	}, {
+		name: "GOOGLE_CLIENT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_CLIENT"
+		}
+	}, {
+		name: "GOOGLE_S"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "GOOGLE_S"
+		}
+	}, {
+		name: "OFFICE_CLIENT"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_CLIENT"
+		}
+	}, {
+		name: "OFFICE_S"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "OFFICE_S"
+		}
+	}, {
+		name: "TOKEN_VERIFIER"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "TOKEN_VERIFIER"
+		}
+	}, {
+		name: "SLACK_ACCESS_TOKEN"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "SLACK_ACCESS_TOKEN"
+		}
+	}, {
+		name: "DSN_URL"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "DSN_URL"
+		}
+	}, {
+		name: "USE_NOTES_MONGO_USERNAME"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "USE_NOTES_MONGO_USERNAME"
+		}
+	}, {
+		name: "USE_NOTES_MONGO_PASSWORD"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "USE_NOTES_MONGO_PASSWORD"
+		}
+	}, {
+		name: "USE_NOTES_MONGO_URI"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "USE_NOTES_MONGO_URI"
+		}
+	}, {
+		name: "ANALYTICS_SEGMENT_WRITE_KEY"
+		valueFrom: secretKeyRef: {
+			name: _#config.secretName
+			key:  "ANALYTICS_SEGMENT_WRITE_KEY"
+		}
 	}]
+	extraSecrets: []
 	ingress: {
 		enabled:   true
 		className: "nginx"
