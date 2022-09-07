@@ -31,15 +31,6 @@ package fireflies
 		name:      "google-cloud-key"
 		mountPath: "/var/secrets/google"
 	}]
-	secrets: {
-		name:      "ff-k8s-config"
-		backend:   "gcpSecretsManager"
-		projectId: _#config.googleProjectId
-		data: [{
-			key:  "ff-k8s-config"
-			name: "k8s-config"
-		}]
-	}
 	extraEnv: [{
 		name:  "K8S_TARGET_NAMESPACE"
 		value: "private"
@@ -113,12 +104,6 @@ package fireflies
 	}, {
 		name:  "DEFAULT_DATABASE_URI"
 		value: "mongodb+srv://$(PARSE_USERNAME):$(PARSE_PASSWORD)@parse-svc.private.svc.cluster.local/parse-server?ssl=false&authSource=admin&tls=false&replicaSet=parse"
-	}, {
-		name: "K8S_PUPPET_DISPATCH_STRING"
-		valueFrom: secretKeyRef: {
-			name: "ff-k8s-config"
-			key:  "k8s-config"
-		}
 	}, {
 		name: "K8S_USABLE_CLUSTERS"
 		value: """
