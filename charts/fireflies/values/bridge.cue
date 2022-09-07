@@ -118,6 +118,6 @@ bridge: {
 		}]
 	}
 	terminationGracePeriodSeconds: 80
-	backendConfig: enabled: true
+	backendConfig: enabled: false
 	linkerd: inject:        "enabled"
 }
