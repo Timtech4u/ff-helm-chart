@@ -68,18 +68,6 @@ apollo: {
 			key:  "GQL_ACCESS_TOKEN"
 		}
 	}, {
-		name: "SERVER_IP"
-		valueFrom: secretKeyRef: {
-			name: _#config.secretName
-			key:  "SERVER_IP"
-		}
-	}, {
-		name: "SERVER_PORT"
-		valueFrom: secretKeyRef: {
-			name: _#config.secretName
-			key:  "SERVER_PORT"
-		}
-	}, {
 		name: "WINSTON_TOKEN"
 		valueFrom: secretKeyRef: {
 			name: _#config.secretName

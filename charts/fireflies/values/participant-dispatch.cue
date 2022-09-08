@@ -44,9 +44,6 @@ package fireflies
 		name:  "EMAIL_TOPIC"
 		value: "EMAIL_TOPIC_STAGING"
 	}, {
-		name:  "SERVER_PORT"
-		value: "8001"
-	}, {
 		name:  "TZ"
 		value: "America/New_York"
 	}, {
@@ -117,12 +114,6 @@ package fireflies
 		valueFrom: secretKeyRef: {
 			name: _#config.secretName
 			key:  "GQL_ACCESS_TOKEN"
-		}
-	}, {
-		name: "SERVER_IP"
-		valueFrom: secretKeyRef: {
-			name: _#config.secretName
-			key:  "SERVER_IP"
 		}
 	}, {
 		name: "PARTICIPANT_DISPATCH_AUTH"

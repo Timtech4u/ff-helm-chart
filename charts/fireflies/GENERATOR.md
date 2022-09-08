@@ -23,8 +23,6 @@ Fireflies by nature require many stuff to be set up like Google Project, OAUTH c
 | SEGMENT_WRITE_KEY | audio, apollo, autojoin-worker, bot-fireflies, calendar, call-join, dashboard | |
 | GROWTHBOOK_API_KEY | audio, call-join | |
 | GQL_ACCESS_TOKEN | apollo, autojoin-worker, calendar, bot-fireflies, calendar-watch, call-join, dashboard, participant-dispatch | |
-| SERVER_IP | apollo, call-join, participant-dispatch | |
-| SERVER_PORT | apollo, call-join | |
 | WINSTON_TOKEN | apollo | |
 | WINSTON_SUBDOMAIN | apollo | |
 | OAUTH_CLIENT_ID | apollo, autojoin-worker, bot-fireflies, calendar, calendar-watch, call-join | |

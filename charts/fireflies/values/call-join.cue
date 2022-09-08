@@ -284,18 +284,6 @@ package fireflies
 			key:  "SEGMENT_WRITE_KEY"
 		}
 	}, {
-		name: "SERVER_IP"
-		valueFrom: secretKeyRef: {
-			name: _#config.secretName
-			key:  "SERVER_IP"
-		}
-	}, {
-		name: "SERVER_PORT"
-		valueFrom: secretKeyRef: {
-			name: _#config.secretName
-			key:  "SERVER_PORT"
-		}
-	}, {
 		name: "TWILIO_ACCOUNT_SID"
 		valueFrom: secretKeyRef: {
 			name: _#config.secretName

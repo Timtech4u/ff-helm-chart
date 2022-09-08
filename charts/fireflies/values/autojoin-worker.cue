@@ -40,13 +40,6 @@ package fireflies
 		name:  "GQL_URL"
 		value: "http://bot-fireflies.private.svc.cluster.local:8001/graphql"
 	}, {
-		// to be replaced with internal endpoint
-		name:  "SERVER_PORT"
-		value: "SERVER_PORT"
-	}, {
-		name:  "SERVER_IP"
-		value: "SERVER_IP"
-	}, {
 		name:  "DEBUG_AUTOJOIN"
 		value: "DEBUG_AUTOJOIN"
 	}, {
