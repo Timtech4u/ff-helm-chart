@@ -10,6 +10,7 @@ cue vet -p fireflies \
 --strict \
 -t googleProjectId=ff-private-cloud \
 -t secretName=parse-admin-fireflies \
+-t prefix=ff- \
 ./charts/fireflies/values
 
 echo "Generating"
@@ -19,4 +20,5 @@ cue export -p fireflies \
 -f --strict \
 -t googleProjectId=ff-private-cloud \
 -t secretName=parse-admin-fireflies \
+-t prefix=ff- \
 ./charts/fireflies/values

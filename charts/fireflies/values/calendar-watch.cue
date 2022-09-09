@@ -45,7 +45,7 @@ package fireflies
 	}, {
 		// to be replaced with internal endpoint
 		name:  "autoJoinQueueTopic"
-		value: "autojoin-queue"
+		value: _#config.prefix+"autojoin-queue"
 	}, {
 		name:  "USER_SERVICE_GRPC_URL"
 		value: "user-service.private.svc.cluster.local:50051"

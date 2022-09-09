@@ -67,7 +67,7 @@ package fireflies
 		value: "HIDE_AUTOCONFIRM"
 	}, {
 		name:  "autoJoinQueueTopic"
-		value: "autojoin-queue"
+		value: _#config.prefix+"autojoin-queue"
 	}, {
 		name:  "PUB_SUB_SUBSCRIPTION"
 		value: "autojoin-queue-sub"
@@ -77,10 +77,10 @@ package fireflies
 	}, {
 		// to be replaced with internal endpoint
 		name:  "callJoinQueueTopic"
-		value: "call-join-queue"
+		value: _#config.prefix+"call-join-queue"
 	}, {
 		name:  "EVENT_STREAM_TOPIC"
-		value: "autojoin-worker-ff-events"
+		value: _#config.prefix+"autojoin-worker-ff-events"
 	}, {
 		name:  "USER_SERVICE_GRPC_URL"
 		value: "user-service.private.svc.cluster.local:50051"

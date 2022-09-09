@@ -52,7 +52,7 @@ package fireflies
 		value: "private"
 	}, {
 		name:  "callJoinQueueTopic"
-		value: "call-join-queue"
+		value: _#config.prefix+"call-join-queue"
 	}, {
 		name:  "AUTOJOIN_PUBLISHER"
 		value: "autojoin-queue"
@@ -61,7 +61,7 @@ package fireflies
 		value: "autojoin-delayed-queue-sub"
 	}, {
 		name:  "SCHEDULER_MESSAGE_QUEUE_TOPIC"
-		value: "message-queue"
+		value: _#config.prefix+"message-queue"
 	}, {
 		name:  "SCHEDULER_MESSAGE_QUEUE_SUBSCRIPTION"
 		value: "message-queue-sub"

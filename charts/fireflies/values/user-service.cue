@@ -60,7 +60,7 @@ package fireflies
 		value: "0.0.0.0:50051"
 	}, {
 		name:  "PUBSUB_TOPIC_NAME"
-		value: "user-service-stream"
+		value: _#config.prefix+"user-service-stream"
 	}, {
 		name:  "USE_NOTES_REGISTER_SUCCESS_CALL_BACK_URL"
 		value: "/auth/welcome/user"

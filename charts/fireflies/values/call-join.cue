@@ -29,13 +29,13 @@ package fireflies
 	}]
 	extraEnv: [{
 		name:  "K8S_RANCHER_TOPIC"
-		value: "k8s-join-queue"
+		value: _#config.prefix+"k8s-join-queue"
 	}, {
 		name:  "K8S_POD_TOPIC"
-		value: "k8s-join-queue"
+		value: _#config.prefix+"k8s-join-queue"
 	}, {
 		name:  "RECUR_QUEUE_TOPIC"
-		value: "recur-queue"
+		value: _#config.prefix+"recur-queue"
 	}, {
 		name:  "DEFAULT_DUP_CACHE_TTL"
 		value: "1200"
@@ -53,7 +53,7 @@ package fireflies
 		value: _#config.googleProjectId
 	}, {
 		name:  "PUPPET_V2_PUB_SUB_TOPIC"
-		value: "puppet-queue"
+		value: _#config.prefix+"puppet-queue"
 	}, {
 		name:  "VP_WATCH_STUCK_JOBS"
 		value: "voice-puppet-stuck-job-watch-recovery"
@@ -132,10 +132,10 @@ package fireflies
 	}, {
 		// to be replaced with internal endpoint
 		name:  "EVENT_STREAM_TOPIC"
-		value: "call-join-ff-events"
+		value: _#config.prefix+"call-join-ff-events"
 	}, {
 		name:  "PUPPET_V2_EVENT_STREAM_TOPIC"
-		value: "puppet-runner-events"
+		value: _#config.prefix+"puppet-runner-events"
 	}, {
 		name:  "CDN_URL"
 		value: "https://cdn.fireflies.ai"

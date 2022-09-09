@@ -42,7 +42,7 @@ package fireflies
 	}, {
 		// to be replaced with internal endpoint
 		name:  "EMAIL_TOPIC"
-		value: "EMAIL_TOPIC_STAGING"
+		value: _#config.prefix+"EMAIL_TOPIC_STAGING"
 	}, {
 		name:  "TZ"
 		value: "America/New_York"
@@ -66,7 +66,7 @@ package fireflies
 		value: "participant-dispatch-ff-events"
 	}, {
 		name:  "PARTICPANT_DISPATCH_TOPIC"
-		value: "participant-dispatch-queue"
+		value: _#config.prefix+"participant-dispatch-queue"
 	}, {
 		name:  "PARTICPANT_DISPATCH_SUBSCRIPTION"
 		value: "participant-dispatch-queue-sub"

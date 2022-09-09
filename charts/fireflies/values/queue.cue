@@ -38,7 +38,7 @@ queue: {
 		value: "staging"
 	}, {
 		name:  "callJoinQueueTopic"
-		value: "call-join-queue"
+		value: _#config.prefix+"call-join-queue"
 	}, {
 		name:  "AUTOJOIN_PUBLISHER"
 		value: "autojoin-queue"
@@ -100,7 +100,7 @@ queue: {
 		value: "STAGING_SCHEDULER_JOB_QUEUE"
 	}, {
 		name:  "SCHEDULER_JOB_QUEUE_TOPIC"
-		value: "SCHEDULER_JOB_QUEUE_TOPIC"
+		value: _#config.prefix+"SCHEDULER_JOB_QUEUE_TOPIC"
 	}, {
 		name:  "SCHEDULER_JOB_MAX_CONCURRENCY"
 		value: "100"

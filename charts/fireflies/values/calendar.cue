@@ -68,7 +68,7 @@ calendar: {
 		value: "redis://user:Na7_Bymivusyfedus0_Licacig8@redis-master.private.svc.cluster.local:6379"
 	}, {
 		name:  "GENERALSCHEDULER_TOPIC"
-		value: "message-queue"
+		value: _#config.prefix+"message-queue"
 	}, {
 		name:  "USER_RPC_ENABLE_INSECURE"
 		value: "true"

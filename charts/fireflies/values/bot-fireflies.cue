@@ -33,7 +33,7 @@ package fireflies
 		value: _#config.googleProjectId
 	}, {
 		name:  "mailinServerDevTopic"
-		value: "mailin-server-queue"
+		value: _#config.prefix+"mailin-server-queue"
 	}, {
 		name:  "GOOGLE_APPLICATION_CREDENTIALS"
 		value: "/var/secrets/google/key.json"
@@ -45,13 +45,13 @@ package fireflies
 		value: "--max-old-space-size=2560"
 	}, {
 		name:  "EMAIL_TOPIC"
-		value: "EMAIL_TOPIC_STAGING"
+		value: _#config.prefix+"EMAIL_TOPIC_STAGING"
 	}, {
 		name:  "PARTICPANT_DISPATCH_QUEUE_PREFIX"
 		value: "PARTICIPANT_JOB_QUEUE_STAGING"
 	}, {
 		name:  "COMPLIANCE_TOPIC"
-		value: "COMPLIANCE_TOPIC_STAGING"
+		value: _#config.prefix+"COMPLIANCE_TOPIC_STAGING"
 	}, {
 		name:  "AUDIO_EDIT_SERVICE"
 		value: "https://audio-edit.firefliesapp.com"
@@ -83,7 +83,7 @@ package fireflies
 	}, {
 		// to be replaced with internal endpoint
 		name:  "callJoinQueueTopic"
-		value: "call-join-queue"
+		value: _#config.prefix+"call-join-queue"
 	}, {
 		name:  "DEBUG_RABBIT_MQ"
 		value: "startWorkerDebug"
@@ -147,13 +147,13 @@ package fireflies
 		value: "call-join-queue"
 	}, {
 		name:  "EMAIL_QUEUE_TOPIC"
-		value: "email-queue"
+		value: _#config.prefix+"email-queue"
 	}, {
 		name:  "EMAIL_SUBSCRIPTION"
 		value: "email-queue-sub"
 	}, {
 		name:  "RECUR_QUEUE_TOPIC"
-		value: "email-recurring"
+		value: _#config.prefix+"email-recurring"
 	}, {
 		name:  "RECUR_SUBSCRIPTION"
 		value: "email-recurring-sub"
@@ -165,19 +165,19 @@ package fireflies
 		value: "https://auth-ff.fireflies.dev"
 	}, {
 		name:  "GENERALSCHEDULER_TOPIC"
-		value: "message-queue"
+		value: _#config.prefix+"message-queue"
 	}, {
 		name:  "EVENT_STREAM_TOPIC"
-		value: "bot-fireflies-events"
+		value: _#config.prefix+"bot-fireflies-events"
 	}, {
 		name:  "CALENDAR_QUEUE_TOPIC"
-		value: "calendar-queue"
+		value: _#config.prefix+"calendar-queue"
 	}, {
 		name:  "CALENDAR_SUBSCRIPTION"
 		value: "calendar-queue-sub"
 	}, {
 		name:  "PARTICIPANT_DISPATCH_TOPIC"
-		value: "participant-dispatch-queue"
+		value: _#config.prefix+"participant-dispatch-queue"
 	}, {
 		name:  "DEBUG_AUTOJOIN"
 		value: "true"
@@ -229,13 +229,13 @@ package fireflies
 		value: "http://participant-dispatch.private.svc.cluster.local:3000"
 	}, {
 		name:  "PUBSUB_AUTOJOIN_TOPIC"
-		value: "autojoin-queue"
+		value: _#config.prefix+"autojoin-queue"
 	}, {
 		name:  "mailinServerSubscription"
 		value: "mailin-server-queue-sub"
 	}, {
 		name:  "REPEAT_WATCH_TOPIC"
-		value: "bot-ff-repeat-watch"
+		value: _#config.prefix+"bot-ff-repeat-watch"
 	}, {
 		name:  "REPEAT_CALENDAR_WATCH_SUBSCRIPTION"
 		value: "bot-ff-repeat-watch-sub"

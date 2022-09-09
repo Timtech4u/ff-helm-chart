@@ -117,7 +117,7 @@ audio: {
 		value: "https://api.fireflies.dev"
 	}, {
 		name:  "EVENT_STREAM_TOPIC"
-		value: "audio-ff-events"
+		value: _#config.prefix+"audio-ff-events"
 	}, {
 		name:  "FORMAT_LAMBDA_URL"
 		value: "https://dwgritefml.execute-api.us-east-1.amazonaws.com/stage/captions"
