@@ -9,6 +9,7 @@ Expand the name of the chart.
 {{- range $key, $val := .Values.annotations -}}
 {{ $key }}: {{ $val | quote }}
 {{ end -}}
+secret.reloader.stakater.com/reload: {{ include "app.secretName" . }}
 {{- end -}}
 
 {{- define "app.annotations" -}}
