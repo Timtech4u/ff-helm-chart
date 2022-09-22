@@ -188,4 +188,6 @@ import resource "k8s.io/apimachinery/pkg/api/resource"
 	volumes?: [...apiV1.#Volume]
 
 	linkerd?: [string]: string
+
+	cluster?: string
 }

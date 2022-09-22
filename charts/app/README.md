@@ -15,6 +15,7 @@ A basic helm chart for deploying application on Fireflies
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Metrics to be used for deciding whether the pod should be upscaled or not. |
 | backendConfig.enabled | bool | `false` | Enable Backend Config |
 | backendConfig.port | int | `3000` | Port to be used on Backend Config |
+| cluster | string | `nil` | Cluster name where the workload deployed. This value being used for calculate the secret |
 | disableSuffix | bool | `true` | This new params would disable our changes by default. |
 | extraSecrets | list | `[]` | Pull sensitive data from Secret Manager into environment variable ``` - key: the secret key on Secret Manager   name: name of environment variables ``` |
 | image.args | list | `[]` | args to be used with command |

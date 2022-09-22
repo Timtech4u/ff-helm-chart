@@ -2,6 +2,9 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# -- Cluster name where the workload deployed. This value being used for calculate the secret
+cluster:
+
 # -- The desired number of pod
 replicaCount: 1
 

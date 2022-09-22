@@ -64,8 +64,6 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- define "app.firefliesLabels" -}}
 {{- if .Values.overrideArgoID -}}
 {{- .Values.overrideArgoID -}}
-{{- else if .Values.cluster -}}
-{{- .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
 {{- else -}}
 {{- .Release.Namespace }}-{{ .Release.Name }}
 {{- end }}
@@ -80,8 +78,6 @@ app.kubernetes.io/name: {{ include "app.name" . }}
 {{- if .Values.overrideArgoID }}
 app.kubernetes.io/instance: {{ .Values.overrideArgoID }}
 app.kubernetes.io/instance-name: {{ .Values.overrideArgoID }}-{{ .Release.Name }}
-{{- else if .Values.cluster }}
-app.kubernetes.io/instance: {{ .Values.cluster }}-{{ .Release.Namespace }}-{{ .Release.Name }}
 {{- else }}
 app.kubernetes.io/instance: {{ .Release.Namespace }}-{{ .Release.Name }}
 {{- end }}
@@ -103,8 +99,12 @@ Create the name of the service account to use
 {{- end }}
 
 {{- define "app.secretKeyName" -}}
-{{ default (printf "env-%s-%s" .Release.Namespace (include "app.fullname" .)) .Values.overrideSecretKey | trunc 63 | trimSuffix "-" }}
-{{- end }}
+{{- if .Values.cluster -}}
+{{- default (printf "env-%s-%s-%s" .Values.cluster .Release.Namespace (include "app.fullname" .)) .Values.overrideSecretKey | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- default (printf "env-%s-%s" .Release.Namespace (include "app.fullname" .)) .Values.overrideSecretKey | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
 
 {{- define "app.secretProject" -}}
 {{- default "fireflies-ai" .Values.secretProject }}
